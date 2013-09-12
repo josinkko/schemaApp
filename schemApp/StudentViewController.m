@@ -9,22 +9,24 @@
 #import "StudentViewController.h"
 #import "DayDetailViewController.h"
 #import "PrivateMessageViewController.h"
+
 @interface StudentViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation StudentViewController
-
 {
     NSArray *values;
     
 }
+@synthesize MessageToAll;
 
 - (void)viewDidLoad
 {
 
     
     [super viewDidLoad];
+ 
    
 }
 

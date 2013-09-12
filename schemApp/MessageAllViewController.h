@@ -17,4 +17,5 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *MessageText;
 
+@property (weak, nonatomic) IBOutlet UILabel *MessageSent;
 @end

@@ -25,6 +25,7 @@
     Message.layer.borderColor = [UIColor lightGrayColor].CGColor;
     Message.layer.borderWidth = 0.5f;
     [super viewDidLoad];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

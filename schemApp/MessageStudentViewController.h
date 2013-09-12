@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *Search;
 @property (weak, nonatomic) IBOutlet UITextView *MessageText;
 
+@property (weak, nonatomic) IBOutlet UITextField *MessageFrom;
+@property (weak, nonatomic) IBOutlet UITextField *MessageTo;
+@property (weak, nonatomic) IBOutlet UILabel *MessageSent;
 
 - (IBAction)send:(id)sender;
 - (IBAction)Clear:(id)sender;

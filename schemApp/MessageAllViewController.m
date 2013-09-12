@@ -7,12 +7,13 @@
 //
 
 #import "MessageAllViewController.h"
-
+#import "SendMessage.h"
+#import "Couch.h"
 @interface MessageAllViewController () <UITextFieldDelegate>
 
 @end
 @implementation MessageAllViewController
-@synthesize MessageText,FromTextField;
+@synthesize MessageText,FromTextField,MessageSent;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,11 +34,7 @@
     MessageText.layer.borderWidth = 0.5f;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 
 
@@ -49,8 +46,23 @@
     [self textViewDidBeginEditing:MessageText];
     
 }
-
+#pragma mark MessageToAll
 - (IBAction)SendMessage:(id)sender {
+    NSLog(@"***************  SEND MESSEGE  ***************");
+    Couch *couch =[[Couch alloc] init];
+    SendMessage *message = [[SendMessage alloc]initWithMessage:self.MessageText.text
+                                                        From:self.FromTextField.text StudentId:@"messageToAll"];{
+        [couch reqToUrl:@"https://schempp.iriscouch.com/messages"
+        HttpMethod:@"POST" body:[message json] onComplete:^(NSURLResponse *response,
+                                                            NSData *data,
+                                                            NSError *error) {
+    NSLog(@"%@", [Couch parseData:data]);
+    NSLog(@"***************  SUCCESS  ***************");
+            
+        }];
+    MessageSent.text = @"Message sent";
+
+    }
 
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -81,5 +93,6 @@
     NSLog(@"%@", dateInStringFormated);
     MessageText.text = dateInStringFormated;
 }
+
 
 @end

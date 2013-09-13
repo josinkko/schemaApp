@@ -12,6 +12,7 @@
 		6439655617E1BD7200E4511A /* Message+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655517E1BD7200E4511A /* Message+Json.m */; };
 		6439655917E1BDAE00E4511A /* SendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655817E1BDAE00E4511A /* SendMessage.m */; };
 		6439655C17E1BE2600E4511A /* Couch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655B17E1BE2600E4511A /* Couch.m */; };
+		6439657317E3002A00E4511A /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6439657217E3002A00E4511A /* list.plist */; };
 		645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645356F117DE473F00122D75 /* MessageStudentViewController.m */; };
 		645356F417DE473F00122D75 /* MessageStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645356F217DE473F00122D75 /* MessageStudentViewController.xib */; };
 		645356FF17DF1ADF00122D75 /* AddCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645356FD17DF1ADF00122D75 /* AddCourseViewController.m */; };
@@ -35,7 +36,6 @@
 		6453574917E05AF100122D75 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574817E05AF100122D75 /* Lesson.m */; };
 		6453574D17E05BB800122D75 /* AdminMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574C17E05BB800122D75 /* AdminMethods.m */; };
 		6453575017E05C0A00122D75 /* StudentMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574F17E05C0A00122D75 /* StudentMethods.m */; };
-		6453575517E06D7F00122D75 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6453575417E06D7F00122D75 /* list.plist */; };
 		647EED1A17DE120C004285C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1917DE120C004285C6 /* Foundation.framework */; };
 		647EED1C17DE120C004285C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1B17DE120C004285C6 /* CoreGraphics.framework */; };
 		647EED1E17DE120C004285C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1D17DE120C004285C6 /* UIKit.framework */; };
@@ -82,6 +82,7 @@
 		6439655817E1BDAE00E4511A /* SendMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessage.m; sourceTree = "<group>"; };
 		6439655A17E1BE2600E4511A /* Couch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Couch.h; sourceTree = "<group>"; };
 		6439655B17E1BE2600E4511A /* Couch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Couch.m; sourceTree = "<group>"; };
+		6439657217E3002A00E4511A /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		645356F017DE473F00122D75 /* MessageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStudentViewController.h; sourceTree = "<group>"; };
 		645356F117DE473F00122D75 /* MessageStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStudentViewController.m; sourceTree = "<group>"; };
 		645356F217DE473F00122D75 /* MessageStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageStudentViewController.xib; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		6453574C17E05BB800122D75 /* AdminMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminMethods.m; sourceTree = "<group>"; };
 		6453574E17E05C0A00122D75 /* StudentMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentMethods.h; sourceTree = "<group>"; };
 		6453574F17E05C0A00122D75 /* StudentMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentMethods.m; sourceTree = "<group>"; };
-		6453575417E06D7F00122D75 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		647EED1617DE120C004285C6 /* schemApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schemApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647EED1917DE120C004285C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		647EED1B17DE120C004285C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -306,6 +306,7 @@
 		647EED0D17DE120B004285C6 = {
 			isa = PBXGroup;
 			children = (
+				6439657217E3002A00E4511A /* list.plist */,
 				647EED2117DE120C004285C6 /* schemApp */,
 				647EED3E17DE120C004285C6 /* schemAppTests */,
 				647EED1817DE120C004285C6 /* Frameworks */,
@@ -338,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				647EED2A17DE120C004285C6 /* AppDelegate.h */,
-				6453575417E06D7F00122D75 /* list.plist */,
 				647EED2B17DE120C004285C6 /* AppDelegate.m */,
 				6439655217E1BC7300E4511A /* BroadCast+Json */,
 				DBC0FF0317E0D88000BAF2E8 /* Storage */,
@@ -517,11 +517,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6439657317E3002A00E4511A /* list.plist in Resources */,
 				6439655117E0A6E200E4511A /* UpdateCoursesViewController.xib in Resources */,
 				647EED5917DE1B8E004285C6 /* AdminViewController.xib in Resources */,
 				647EED2617DE120C004285C6 /* InfoPlist.strings in Resources */,
 				6453573517DF452C00122D75 /* DayDetailViewController.xib in Resources */,
-				6453575517E06D7F00122D75 /* list.plist in Resources */,
 				6453571217DF2DB800122D75 /* AddStudentViewController.xib in Resources */,
 				6453572317DF35C600122D75 /* Mail.png in Resources */,
 				6453571817DF301400122D75 /* UpdateStudentViewController.xib in Resources */,

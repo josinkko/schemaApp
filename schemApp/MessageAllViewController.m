@@ -32,6 +32,7 @@
     [super viewDidLoad];
     MessageText.layer.borderColor = [UIColor lightGrayColor].CGColor;
     MessageText.layer.borderWidth = 0.5f;
+    
 }
 
 

@@ -2,20 +2,21 @@
 //  Storage.h
 //  schemApp
 //
-//  Created by Patrik Sundbäck on 9/11/13.
+//  Created by Jimmy Lidström on 2013-09-16.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface Storage : NSObject
-@property (nonatomic, strong) NSMutableArray *courses;
-@property (nonatomic, strong) NSMutableArray *lessons;
-@property (nonatomic, strong) NSMutableArray *students;
 
-+(Storage*)sharedStorage;
+@property (nonatomic, readonly, strong)NSManagedObjectContext *context;
 
--(NSArray*)returnStorageAsNSArray;
-+(id)returnStorageFromArray: (NSArray*)targetStorageAsNSArray;
++(Storage*) sharedStorage;
+
++(void) saveManagedContext:(NSManagedObjectContext*) targetContext;
+
++(void) readData;
 
 @end

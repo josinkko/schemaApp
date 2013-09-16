@@ -2,21 +2,22 @@
 //  Course.h
 //  schemApp
 //
-//  Created by sebastian holmqvist on 2013-09-11.
+//  Created by Jimmy Lidström on 2013-09-16.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Course : NSObject
-@property (nonatomic, copy) NSString* courseName;
-@property (nonatomic, copy) NSString* courseDescription;
-@property (nonatomic, copy) NSString* courseReadingMaterial;
-@property (nonatomic, copy) NSString* courseId;
 
--(id) initWithCourseName: (NSString*) targetCourseName courseDescription: (NSString*) targetCourseDescription courseReadingMaterial: (NSString*)targetReadingMaterial courseId: (NSString*) targetCourseId;
+@interface Course : NSManagedObject
 
--(NSDictionary*)returnCourseAsNSDictionary;
-+(id)returnCourseFromDictionary: (NSDictionary*)targetCourseAsNSDictionary;
+@property (nonatomic, retain) NSString * courseName;
+@property (nonatomic, retain) NSString * courseDescription;
+@property (nonatomic, retain) NSString * courseReadingMaterial;
+@property (nonatomic, retain) NSString * courseId;
+@property (nonatomic, retain) NSString * courseDay;
+@property (nonatomic, retain) NSString * courseStart;
+@property (nonatomic, retain) NSString * courseStop;
 
 @end

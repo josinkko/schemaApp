@@ -56,23 +56,19 @@
                  
              }];
         MessageSent.text = @"Message sent";
-        
     }
-    
 }
 
 - (IBAction)Clear:(id)sender {
     [self textViewDidBeginEditing:MessageText];
-
 }
-
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
     return YES;
 }
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
@@ -80,13 +76,12 @@
 #pragma mark reload textfield
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    
     textView.text = @"";
     [self timeStamp];
 }
+#pragma mark Set time stamp on message
 -(void)timeStamp
 {
-#pragma mark Set time stamp on message
     NSDate *currentDateTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEE, HH:mm"];

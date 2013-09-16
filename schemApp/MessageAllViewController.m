@@ -22,21 +22,13 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
-
-    
-    
     [self timeStamp];
     [super viewDidLoad];
     MessageText.layer.borderColor = [UIColor lightGrayColor].CGColor;
     MessageText.layer.borderWidth = 0.5f;
 }
-
-
-
-
 
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -63,14 +55,15 @@
     MessageSent.text = @"Message sent";
 
     }
-
 }
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     
     return YES;
 }
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
@@ -78,14 +71,12 @@
 #pragma mark reload textfield
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
- 
     textView.text = @"";
     [self timeStamp];
 }
-
+#pragma mark Set time stamp on message
 -(void)timeStamp
 {
-#pragma mark Set time stamp on message
     NSDate *currentDateTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEE, HH:mm"];

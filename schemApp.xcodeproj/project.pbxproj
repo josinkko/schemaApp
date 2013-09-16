@@ -14,8 +14,6 @@
 		6439655C17E1BE2600E4511A /* Couch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655B17E1BE2600E4511A /* Couch.m */; };
 		645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645356F117DE473F00122D75 /* MessageStudentViewController.m */; };
 		645356F417DE473F00122D75 /* MessageStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645356F217DE473F00122D75 /* MessageStudentViewController.xib */; };
-		645356FF17DF1ADF00122D75 /* AddCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645356FD17DF1ADF00122D75 /* AddCourseViewController.m */; };
-		6453570017DF1ADF00122D75 /* AddCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645356FE17DF1ADF00122D75 /* AddCourseViewController.xib */; };
 		6453570B17DF2B2C00122D75 /* DeleteCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453570917DF2B2C00122D75 /* DeleteCourseViewController.m */; };
 		6453570C17DF2B2C00122D75 /* DeleteCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453570A17DF2B2C00122D75 /* DeleteCourseViewController.xib */; };
 		6453571117DF2DB800122D75 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453570F17DF2DB800122D75 /* AddStudentViewController.m */; };
@@ -29,12 +27,7 @@
 		6453573517DF452C00122D75 /* DayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453573317DF452C00122D75 /* DayDetailViewController.xib */; };
 		6453573A17DF966200122D75 /* PrivateMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453573817DF966200122D75 /* PrivateMessageViewController.m */; };
 		6453573B17DF966200122D75 /* PrivateMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453573917DF966200122D75 /* PrivateMessageViewController.xib */; };
-		6453573F17E059CC00122D75 /* Admin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453573E17E059CC00122D75 /* Admin.m */; };
 		6453574317E05A7200122D75 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574217E05A7200122D75 /* Student.m */; };
-		6453574617E05AB400122D75 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574517E05AB400122D75 /* Course.m */; };
-		6453574917E05AF100122D75 /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574817E05AF100122D75 /* Lesson.m */; };
-		6453574D17E05BB800122D75 /* AdminMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574C17E05BB800122D75 /* AdminMethods.m */; };
-		6453575017E05C0A00122D75 /* StudentMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574F17E05C0A00122D75 /* StudentMethods.m */; };
 		6453575517E06D7F00122D75 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6453575417E06D7F00122D75 /* list.plist */; };
 		647EED1A17DE120C004285C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1917DE120C004285C6 /* Foundation.framework */; };
 		647EED1C17DE120C004285C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1B17DE120C004285C6 /* CoreGraphics.framework */; };
@@ -53,12 +46,14 @@
 		647EED4517DE120C004285C6 /* schemAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED4417DE120C004285C6 /* schemAppTests.m */; };
 		647EED5217DE1269004285C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED5017DE1269004285C6 /* MainViewController.m */; };
 		647EED5317DE1269004285C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647EED5117DE1269004285C6 /* MainViewController.xib */; };
-		647EED5817DE1B8E004285C6 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED5617DE1B8E004285C6 /* AdminViewController.m */; };
-		647EED5917DE1B8E004285C6 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647EED5717DE1B8E004285C6 /* AdminViewController.xib */; };
 		647EED6A17DE3EAC004285C6 /* MessageAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED6817DE3EAC004285C6 /* MessageAllViewController.m */; };
 		647EED6B17DE3EAC004285C6 /* MessageAllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647EED6917DE3EAC004285C6 /* MessageAllViewController.xib */; };
-		DB2D156B17E1924F00142971 /* StorageToFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2D156A17E1924F00142971 /* StorageToFile.m */; };
-		DBC0FF0617E0DD6E00BAF2E8 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0FF0517E0DD6E00BAF2E8 /* Storage.m */; };
+		A718C3C917E70F840074E604 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C3C817E70F840074E604 /* Course.m */; };
+		A718C3CC17E70FCF0074E604 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C3CB17E70FCF0074E604 /* Storage.m */; };
+		DB9343C717E72CAF009B3987 /* AddCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9343C517E72CAF009B3987 /* AddCourseViewController.m */; };
+		DB9343C817E72CAF009B3987 /* AddCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9343C617E72CAF009B3987 /* AddCourseViewController.xib */; };
+		DB9343CC17E72CBE009B3987 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9343CA17E72CBE009B3987 /* AdminViewController.m */; };
+		DB9343CD17E72CBE009B3987 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9343CB17E72CBE009B3987 /* AdminViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +80,6 @@
 		645356F017DE473F00122D75 /* MessageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStudentViewController.h; sourceTree = "<group>"; };
 		645356F117DE473F00122D75 /* MessageStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStudentViewController.m; sourceTree = "<group>"; };
 		645356F217DE473F00122D75 /* MessageStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageStudentViewController.xib; sourceTree = "<group>"; };
-		645356FC17DF1ADF00122D75 /* AddCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseViewController.h; sourceTree = "<group>"; };
-		645356FD17DF1ADF00122D75 /* AddCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseViewController.m; sourceTree = "<group>"; };
-		645356FE17DF1ADF00122D75 /* AddCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCourseViewController.xib; sourceTree = "<group>"; };
 		6453570817DF2B2C00122D75 /* DeleteCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteCourseViewController.h; sourceTree = "<group>"; };
 		6453570917DF2B2C00122D75 /* DeleteCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteCourseViewController.m; sourceTree = "<group>"; };
 		6453570A17DF2B2C00122D75 /* DeleteCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteCourseViewController.xib; sourceTree = "<group>"; };
@@ -107,19 +99,9 @@
 		6453573717DF966200122D75 /* PrivateMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateMessageViewController.h; sourceTree = "<group>"; };
 		6453573817DF966200122D75 /* PrivateMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateMessageViewController.m; sourceTree = "<group>"; };
 		6453573917DF966200122D75 /* PrivateMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivateMessageViewController.xib; sourceTree = "<group>"; };
-		6453573D17E059CC00122D75 /* Admin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Admin.h; sourceTree = "<group>"; };
-		6453573E17E059CC00122D75 /* Admin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Admin.m; sourceTree = "<group>"; };
 		6453574017E05A4500122D75 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6453574117E05A7200122D75 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		6453574217E05A7200122D75 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		6453574417E05AB400122D75 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		6453574517E05AB400122D75 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		6453574717E05AF100122D75 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
-		6453574817E05AF100122D75 /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
-		6453574B17E05BB800122D75 /* AdminMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminMethods.h; sourceTree = "<group>"; };
-		6453574C17E05BB800122D75 /* AdminMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminMethods.m; sourceTree = "<group>"; };
-		6453574E17E05C0A00122D75 /* StudentMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentMethods.h; sourceTree = "<group>"; };
-		6453574F17E05C0A00122D75 /* StudentMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentMethods.m; sourceTree = "<group>"; };
 		6453575417E06D7F00122D75 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		647EED1617DE120C004285C6 /* schemApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schemApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647EED1917DE120C004285C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,16 +124,19 @@
 		647EED4F17DE1269004285C6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		647EED5017DE1269004285C6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		647EED5117DE1269004285C6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		647EED5517DE1B8E004285C6 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
-		647EED5617DE1B8E004285C6 /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminViewController.m; sourceTree = "<group>"; };
-		647EED5717DE1B8E004285C6 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		647EED6717DE3EAC004285C6 /* MessageAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAllViewController.h; sourceTree = "<group>"; };
 		647EED6817DE3EAC004285C6 /* MessageAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAllViewController.m; sourceTree = "<group>"; };
 		647EED6917DE3EAC004285C6 /* MessageAllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageAllViewController.xib; sourceTree = "<group>"; };
-		DB2D156917E1924F00142971 /* StorageToFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageToFile.h; sourceTree = "<group>"; };
-		DB2D156A17E1924F00142971 /* StorageToFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageToFile.m; sourceTree = "<group>"; };
-		DBC0FF0417E0DD6E00BAF2E8 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
-		DBC0FF0517E0DD6E00BAF2E8 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
+		A718C3C717E70F840074E604 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		A718C3C817E70F840074E604 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		A718C3CA17E70FCF0074E604 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		A718C3CB17E70FCF0074E604 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
+		DB9343C417E72CAF009B3987 /* AddCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseViewController.h; sourceTree = "<group>"; };
+		DB9343C517E72CAF009B3987 /* AddCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseViewController.m; sourceTree = "<group>"; };
+		DB9343C617E72CAF009B3987 /* AddCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCourseViewController.xib; sourceTree = "<group>"; };
+		DB9343C917E72CBE009B3987 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
+		DB9343CA17E72CBE009B3987 /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminViewController.m; sourceTree = "<group>"; };
+		DB9343CB17E72CBE009B3987 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,9 +182,9 @@
 		645356FB17DF1ACB00122D75 /* AddNewCourse */ = {
 			isa = PBXGroup;
 			children = (
-				645356FC17DF1ADF00122D75 /* AddCourseViewController.h */,
-				645356FD17DF1ADF00122D75 /* AddCourseViewController.m */,
-				645356FE17DF1ADF00122D75 /* AddCourseViewController.xib */,
+				DB9343C417E72CAF009B3987 /* AddCourseViewController.h */,
+				DB9343C517E72CAF009B3987 /* AddCourseViewController.m */,
+				DB9343C617E72CAF009B3987 /* AddCourseViewController.xib */,
 			);
 			name = AddNewCourse;
 			sourceTree = "<group>";
@@ -280,14 +265,10 @@
 			isa = PBXGroup;
 			children = (
 				6453574017E05A4500122D75 /* User.h */,
-				6453573D17E059CC00122D75 /* Admin.h */,
-				6453573E17E059CC00122D75 /* Admin.m */,
+				A718C3C717E70F840074E604 /* Course.h */,
+				A718C3C817E70F840074E604 /* Course.m */,
 				6453574117E05A7200122D75 /* Student.h */,
 				6453574217E05A7200122D75 /* Student.m */,
-				6453574417E05AB400122D75 /* Course.h */,
-				6453574517E05AB400122D75 /* Course.m */,
-				6453574717E05AF100122D75 /* Lesson.h */,
-				6453574817E05AF100122D75 /* Lesson.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -295,10 +276,6 @@
 		6453574A17E05B3400122D75 /* ObjectMethods */ = {
 			isa = PBXGroup;
 			children = (
-				6453574B17E05BB800122D75 /* AdminMethods.h */,
-				6453574C17E05BB800122D75 /* AdminMethods.m */,
-				6453574E17E05C0A00122D75 /* StudentMethods.h */,
-				6453574F17E05C0A00122D75 /* StudentMethods.m */,
 			);
 			name = ObjectMethods;
 			sourceTree = "<group>";
@@ -397,9 +374,9 @@
 		647EED5417DE1B7A004285C6 /* AdminViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				647EED5517DE1B8E004285C6 /* AdminViewController.h */,
-				647EED5617DE1B8E004285C6 /* AdminViewController.m */,
-				647EED5717DE1B8E004285C6 /* AdminViewController.xib */,
+				DB9343C917E72CBE009B3987 /* AdminViewController.h */,
+				DB9343CA17E72CBE009B3987 /* AdminViewController.m */,
+				DB9343CB17E72CBE009B3987 /* AdminViewController.xib */,
 				6453571317DF2FB800122D75 /* UpdateStudent */,
 				6453570D17DF2DA600122D75 /* AddNewStudent */,
 				6453570717DF2B1600122D75 /* DeleteCourse */,
@@ -434,10 +411,8 @@
 		DBC0FF0317E0D88000BAF2E8 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				DBC0FF0417E0DD6E00BAF2E8 /* Storage.h */,
-				DBC0FF0517E0DD6E00BAF2E8 /* Storage.m */,
-				DB2D156917E1924F00142971 /* StorageToFile.h */,
-				DB2D156A17E1924F00142971 /* StorageToFile.m */,
+				A718C3CA17E70FCF0074E604 /* Storage.h */,
+				A718C3CB17E70FCF0074E604 /* Storage.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -517,8 +492,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9343CD17E72CBE009B3987 /* AdminViewController.xib in Resources */,
 				6439655117E0A6E200E4511A /* UpdateCoursesViewController.xib in Resources */,
-				647EED5917DE1B8E004285C6 /* AdminViewController.xib in Resources */,
+				DB9343C817E72CAF009B3987 /* AddCourseViewController.xib in Resources */,
 				647EED2617DE120C004285C6 /* InfoPlist.strings in Resources */,
 				6453573517DF452C00122D75 /* DayDetailViewController.xib in Resources */,
 				6453575517E06D7F00122D75 /* list.plist in Resources */,
@@ -529,7 +505,6 @@
 				647EED5317DE1269004285C6 /* MainViewController.xib in Resources */,
 				647EED3117DE120C004285C6 /* Images.xcassets in Resources */,
 				6453571E17DF32CB00122D75 /* StudentViewController.xib in Resources */,
-				6453570017DF1ADF00122D75 /* AddCourseViewController.xib in Resources */,
 				6453573B17DF966200122D75 /* PrivateMessageViewController.xib in Resources */,
 				645356F417DE473F00122D75 /* MessageStudentViewController.xib in Resources */,
 				647EED6B17DE3EAC004285C6 /* MessageAllViewController.xib in Resources */,
@@ -551,31 +526,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9343CC17E72CBE009B3987 /* AdminViewController.m in Sources */,
 				6453573417DF452C00122D75 /* DayDetailViewController.m in Sources */,
+				DB9343C717E72CAF009B3987 /* AddCourseViewController.m in Sources */,
 				6439655917E1BDAE00E4511A /* SendMessage.m in Sources */,
 				647EED2C17DE120C004285C6 /* AppDelegate.m in Sources */,
-				6453574917E05AF100122D75 /* Lesson.m in Sources */,
+				A718C3C917E70F840074E604 /* Course.m in Sources */,
 				6439655C17E1BE2600E4511A /* Couch.m in Sources */,
-				DB2D156B17E1924F00142971 /* StorageToFile.m in Sources */,
 				6453574317E05A7200122D75 /* Student.m in Sources */,
+				A718C3CC17E70FCF0074E604 /* Storage.m in Sources */,
 				645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */,
-				6453574617E05AB400122D75 /* Course.m in Sources */,
-				6453574D17E05BB800122D75 /* AdminMethods.m in Sources */,
 				647EED2817DE120C004285C6 /* main.m in Sources */,
-				647EED5817DE1B8E004285C6 /* AdminViewController.m in Sources */,
 				647EED2F17DE120C004285C6 /* schemApp.xcdatamodeld in Sources */,
 				6453571717DF301400122D75 /* UpdateStudentViewController.m in Sources */,
-				DBC0FF0617E0DD6E00BAF2E8 /* Storage.m in Sources */,
 				6453571117DF2DB800122D75 /* AddStudentViewController.m in Sources */,
-				645356FF17DF1ADF00122D75 /* AddCourseViewController.m in Sources */,
 				6453573A17DF966200122D75 /* PrivateMessageViewController.m in Sources */,
-				6453573F17E059CC00122D75 /* Admin.m in Sources */,
 				6439655017E0A6E200E4511A /* UpdateCoursesViewController.m in Sources */,
 				6453571D17DF32CB00122D75 /* StudentViewController.m in Sources */,
 				6439655617E1BD7200E4511A /* Message+Json.m in Sources */,
 				647EED6A17DE3EAC004285C6 /* MessageAllViewController.m in Sources */,
 				6453570B17DF2B2C00122D75 /* DeleteCourseViewController.m in Sources */,
-				6453575017E05C0A00122D75 /* StudentMethods.m in Sources */,
 				647EED5217DE1269004285C6 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

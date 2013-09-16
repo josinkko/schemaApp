@@ -9,7 +9,6 @@
 
 
 #import "Student.h"
-#import "StudentMethods.h"
 
 @implementation Student
 {
@@ -18,7 +17,6 @@
      To use student methods we import StudentMethods
      */
     
-    StudentMethods *studentMethods;
 }
 
 
@@ -41,7 +39,6 @@
         self.studentSignum = targetSignum;
         self.firstName = targetFirstName;
         self.lastName = targetLastName;
-        studentMethods = [[StudentMethods alloc]init];
         unreadMessages = [[NSMutableArray alloc]init];
         readMessages = [[NSMutableArray alloc]init];
     }

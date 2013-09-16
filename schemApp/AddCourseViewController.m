@@ -7,27 +7,32 @@
 //
 
 #import "AddCourseViewController.h"
-#import "Admin.h"
-#import "AdminMethods.h"
 #import "Course.h"
 #import "Storage.h"
 @interface AddCourseViewController () <UITextFieldDelegate>
 {
-    AdminMethods *adminMethods;
-    Storage *storage;
+    NSManagedObjectContext *context;
 }
 @end
 
 @implementation AddCourseViewController
-@synthesize courseToAdd;
+@synthesize selectedDay,
+selecteTime,
+selectedTimeStop,
+DayArray,
+TimeArray,
+TimeArrayStop,
+thePickerView;
 
 @synthesize CourseInformation,ReadingInformation,CourseName;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        adminMethods = [AdminMethods new];
-        storage = [Storage sharedStorage];
+        /*
+         Load Shared CoreData Storage context.
+         */
+        context = [Storage sharedStorage].context;
     }
     return self;
 }
@@ -35,21 +40,98 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CourseInformation.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    CourseInformation.layer.borderWidth = 0.5f;
-    ReadingInformation.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    ReadingInformation.layer.borderWidth = 0.5f;
+    [self setupBorders];
+    [self setupPicker];
 
-    [self readPlist];
+}
+
+
+#pragma mark PickerController settings
+-(void)setupPicker
+{
+    thePickerView.showsSelectionIndicator = TRUE;
+    self.DayArray=[[NSArray alloc] initWithObjects:@"Måndag",@"Tisdag",@"Onsdag",@"Torsdag",@"Fredag" ,nil];
+    self.TimeArray=[[NSArray alloc] initWithObjects:@"08:00",@"09:00",@"10:00",@"11:00", nil];
+    self.TimeArrayStop=[[NSArray alloc] initWithObjects:@"08:00",@"09:00",@"10:00",@"11:00", nil];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    switch(component ) {
+        case 0:
+            return [DayArray count];
+            break;
+        case 1:
+            return [TimeArray count];
+            break;
+            default:
+        case 2:
+            return [TimeArrayStop count];
+        break;
+    }
+    
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 3;
+}
+
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+
+    if (component == 0) {
+        return [DayArray objectAtIndex:row];
+        
+    }
+    
+    return [TimeArray objectAtIndex:row];
+    return [TimeArrayStop objectAtIndex:row];
 
     
 }
 
-- (void)didReceiveMemoryWarning
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (component == 0) {
+        self.selectedDay.text=[DayArray objectAtIndex:row];
+        return;
+    }
+    if(component == 1)
+    {
+        self.selecteTime.text =[TimeArray objectAtIndex:row];
+        return;
+    }
+        self.selectedTimeStop.text = [TimeArrayStop objectAtIndex:row];
 }
+
+#pragma mark - Add Course to Storage
+- (IBAction)SaveCourse:(id)sender {
+    /*
+     Get Course from Shared CoreData Storage context.
+     */
+    Course *course = [NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
+    
+    course.courseName = self.CourseName.text;
+    course.courseId = self.CourseName.text;
+    course.courseDescription = self.CourseInformation.text;
+    course.courseReadingMaterial = self.ReadingInformation.text;
+    course.courseDay = self.selectedDay.text;
+    course.courseStart = self.selecteTime.text;
+    course.courseStop = self.selectedTimeStop.text;
+    
+    [Storage saveManagedContext:context];
+    [Storage readData];
+    
+}
+
+#pragma mark - UI helpers
 
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -63,16 +145,6 @@
     [self textViewDidBeginEditing:ReadingInformation];
 }
 
-#pragma mark - Add Course to Storage
-- (IBAction)SaveCourse:(id)sender {
-    /*
-        Create a course from textfields and add to SharedStorage (storage.courses)
-        Save SharedStorage to File.
-     */
-    [storage.courses addObject:[[Course alloc]initWithCourseName:self.CourseName.text courseDescription:self.CourseInformation.text courseReadingMaterial:self.ReadingInformation.text courseId:self.CourseName.text]];
-    [self writePlist];
-    
-}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -84,6 +156,14 @@
     [self.view endEditing:YES];
 }
 
+-(void)setupBorders
+{
+    CourseInformation.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    CourseInformation.layer.borderWidth = 0.5f;
+    ReadingInformation.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    ReadingInformation.layer.borderWidth = 0.5f;
+}
+
 #pragma mark reload textfield
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
@@ -92,28 +172,8 @@
 }
 
 
-#pragma mark plist
--(NSString*) dataFilePath
-{
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [path objectAtIndex:0];
-    return [documentDirectory stringByAppendingPathComponent:@"list.plist"];
-}
 
--(void)writePlist
-{
-    /*
-        returnStorageAsNSArray converts Course to NSDictionary and returns them as NSArray.
-     */
-    [[storage returnStorageAsNSArray] writeToFile:[self dataFilePath] atomically:YES];
-}
--(void) readPlist
-{
-    NSString * filePath = [self dataFilePath];
-    if([[NSFileManager defaultManager]fileExistsAtPath:filePath]){
-        storage.courses = [[NSMutableArray alloc]initWithContentsOfFile:filePath];
-        NSLog(@"%@",storage.courses);
-    }
-}
+
+
 
 @end

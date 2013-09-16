@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController {
-IBOutlet UILabel *Datelabel;
-
+@interface MainViewController : UIViewController
+{
+    IBOutlet UILabel *Datelabel;
 }
+
 - (IBAction)AdminButton:(id)sender;
 - (IBAction)StudentButton:(id)sender;
 @property (strong,nonatomic) NSMutableArray *courses;
 @property (strong,nonatomic) NSMutableArray *students;
 
+-(void)showDate;
 @end

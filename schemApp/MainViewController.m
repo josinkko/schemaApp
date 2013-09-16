@@ -30,16 +30,8 @@
 
 - (void)viewDidLoad
 {
-    
-    NSDate *currentDateTime = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEE, HH:mm"];
-    NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
-    NSLog(@"%@", dateInStringFormated);
-    Datelabel.text = dateInStringFormated;
-    
-    
     [super viewDidLoad];
+    [self showDate];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -61,5 +53,14 @@
     [self presentViewController:svc animated:YES completion:nil];
 }
 
+-(void)showDate
+{
+    NSDate *currentDateTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, HH:mm"];
+    NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
+    NSLog(@"%@", dateInStringFormated);
+    Datelabel.text = dateInStringFormated;
+}
 
 @end

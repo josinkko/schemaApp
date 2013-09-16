@@ -14,5 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *TodaysLections;
 
+@property (weak, nonatomic) IBOutlet UILabel *MessageToAll;
 @property (weak, nonatomic) IBOutlet UITableView *SchemTabelView;
 @end

@@ -69,11 +69,7 @@
         Create a course from textfields and add to SharedStorage (storage.courses)
         Save SharedStorage to File.
      */
-    [storage.courses addObject:[[Course alloc]initWithCourseName:self.CourseName.text
-                                               courseDescription:self.CourseInformation.text
-                                           courseReadingMaterial:self.ReadingInformation.text
-                                                        courseId:self.CourseName.text]];
-    NSLog(@"%@", storage.courses);
+    [storage.courses addObject:[[Course alloc]initWithCourseName:self.CourseName.text courseDescription:self.CourseInformation.text courseReadingMaterial:self.ReadingInformation.text courseId:self.CourseName.text]];
     [self writePlist];
     
 }
@@ -115,12 +111,7 @@
 {
     NSString * filePath = [self dataFilePath];
     if([[NSFileManager defaultManager]fileExistsAtPath:filePath]){
-        NSArray *coursesAsDict = [[NSMutableArray alloc]initWithContentsOfFile:filePath];
-        NSMutableArray *completeCoursesArray = [NSMutableArray new];
-        for (NSDictionary *courseAsDict in coursesAsDict) {
-            [completeCoursesArray addObject:[Course returnCourseFromDictionary:courseAsDict]];
-        }
-        storage.courses = completeCoursesArray;
+        storage.courses = [[NSMutableArray alloc]initWithContentsOfFile:filePath];
         NSLog(@"%@",storage.courses);
     }
 }

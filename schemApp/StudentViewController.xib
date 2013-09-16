@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentViewController">
             <connections>
+                <outlet property="MessageToAll" destination="Fuy-6y-wdJ" id="t16-hG-jyf"/>
                 <outlet property="SchemTabelView" destination="svo-XH-Qf3" id="TTb-Of-iMD"/>
                 <outlet property="TodaysLections" destination="VjH-Px-nEd" id="bxH-tN-QKJ"/>
                 <outlet property="view" destination="1" id="3"/>

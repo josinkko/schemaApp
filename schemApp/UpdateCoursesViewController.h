@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UpdateCoursesViewController : UIViewController
+@interface UpdateCoursesViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+
 - (IBAction)Back:(id)sender;
 - (IBAction)ClearInfo:(id)sender;
 - (IBAction)ClearRead:(id)sender;
@@ -22,6 +23,18 @@
 @property (weak, nonatomic) IBOutlet UITextView *UpdateCourseInfo;
 @property (weak, nonatomic) IBOutlet UITextView *UpdateCourseRead;
 
+
+
+@property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
+@property (strong, nonatomic) IBOutlet UITextField *selectedDay;
+@property (strong, nonatomic) IBOutlet UITextField *selecteTime;
+@property (weak, nonatomic) IBOutlet UITextField *selectedTimeStop;
+
+@property (strong, nonatomic) NSArray *DayArray;
+@property (strong, nonatomic) NSArray *TimeArray;
+@property (strong, nonatomic) NSArray *TimeArrayStop;
+
+-(void)setupBorders;
 
 
 @end

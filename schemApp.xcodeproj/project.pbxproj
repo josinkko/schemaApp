@@ -324,9 +324,9 @@
 				6453571F17DF351400122D75 /* Pics */,
 				6453571917DF32B600122D75 /* StudentViewControllers */,
 				647EED5417DE1B7A004285C6 /* AdminViewControllers */,
-				647EED4E17DE122E004285C6 /* MainMenu */,
-				647EED3017DE120C004285C6 /* Images.xcassets */,
 				647EED2D17DE120C004285C6 /* schemApp.xcdatamodeld */,
+				647EED3017DE120C004285C6 /* Images.xcassets */,
+				647EED4E17DE122E004285C6 /* MainMenu */,
 				647EED2217DE120C004285C6 /* Supporting Files */,
 			);
 			path = schemApp;
@@ -377,11 +377,11 @@
 				DB9343C917E72CBE009B3987 /* AdminViewController.h */,
 				DB9343CA17E72CBE009B3987 /* AdminViewController.m */,
 				DB9343CB17E72CBE009B3987 /* AdminViewController.xib */,
+				6453570717DF2B1600122D75 /* DeleteCourse */,
+				645356FB17DF1ACB00122D75 /* AddNewCourse */,
+				6453570117DF200700122D75 /* UpdateCourse */,
 				6453571317DF2FB800122D75 /* UpdateStudent */,
 				6453570D17DF2DA600122D75 /* AddNewStudent */,
-				6453570717DF2B1600122D75 /* DeleteCourse */,
-				6453570117DF200700122D75 /* UpdateCourse */,
-				645356FB17DF1ACB00122D75 /* AddNewCourse */,
 				647EED6617DE3E95004285C6 /* MessageToAll */,
 				647EED5B17DE3A1A004285C6 /* MessageToStudent */,
 			);

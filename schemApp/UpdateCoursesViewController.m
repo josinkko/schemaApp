@@ -19,10 +19,19 @@ selectedTimeStop,
 DayArray,
 TimeArray,
 TimeArrayStop,
-thePickerView;
+thePickerView,
+UpdateCourseInfo,
+UpdateCourseRead,
+UpdateCourseName;
 
-@synthesize UpdateCourseInfo,UpdateCourseRead,UpdateCourseName;
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+      
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {

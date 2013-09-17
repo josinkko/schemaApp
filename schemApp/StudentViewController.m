@@ -10,7 +10,7 @@
 #import "DayDetailViewController.h"
 #import "PrivateMessageViewController.h"
 
-@interface StudentViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface StudentViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @end
 
@@ -19,15 +19,58 @@
     NSArray *values;
     
 }
-@synthesize MessageToAll;
+@synthesize MessageToAll,WelcomeStudentLabel;
 
 - (void)viewDidLoad
 {
 
     
     [super viewDidLoad];
- 
-   
+    [self alertViewStart];
+
+    
+}
+
+
+
+
+#pragma mark AlertView settings
+-(void)alertViewStart
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Please enter your ID"
+                                                   message:@""
+                                                  delegate:self
+                                                cancelButtonTitle:@"Cancel"
+                                                otherButtonTitles:@"Ok", nil];
+    
+    alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    [alert show];
+
+}
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    NSString *inputText = [[alertView textFieldAtIndex:0] text];
+    if( [inputText length] == 10 )
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if(buttonIndex ==0)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        WelcomeStudentLabel.text = @"Welcome student";
+    }
 }
 
 
@@ -89,4 +132,12 @@
     pmvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:pmvc animated:YES completion:nil];
 }
+
+
+-(void)getStudentAlert
+{
+
+}
+
+
 @end

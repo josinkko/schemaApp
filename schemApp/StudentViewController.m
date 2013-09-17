@@ -9,44 +9,36 @@
 #import "StudentViewController.h"
 #import "DayDetailViewController.h"
 #import "PrivateMessageViewController.h"
+#import "Student.h"
+#import "Storage.h"
 
 @interface StudentViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
-
 @end
-
 @implementation StudentViewController
 {
     NSArray *values;
     
 }
 @synthesize MessageToAll,WelcomeStudentLabel;
-
 - (void)viewDidLoad
 {
-
     
     [super viewDidLoad];
     [self alertViewStart];
-
     
 }
-
-
-
-
 #pragma mark AlertView settings
 -(void)alertViewStart
 {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Please enter your ID"
                                                    message:@""
                                                   delegate:self
-                                                cancelButtonTitle:@"Cancel"
-                                                otherButtonTitles:@"Ok", nil];
+                                         cancelButtonTitle:@"Cancel"
+                                         otherButtonTitles:@"Ok", nil];
     
     alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
     [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
     [alert show];
-
 }
 - (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
 {
@@ -60,8 +52,6 @@
         return NO;
     }
 }
-
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
@@ -69,13 +59,17 @@
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
-        WelcomeStudentLabel.text = @"Welcome student";
+        NSManagedObjectContext *readContext = [Storage sharedStorage].context;
+        NSFetchRequest *studentRequest = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
+        NSArray * studentResult = [readContext executeFetchRequest:studentRequest error:nil];
+        for (Student *student in studentResult) {
+            if ([student.studentSignum isEqualToString:[[alertView textFieldAtIndex:0] text]]) {
+                WelcomeStudentLabel.text = [NSString stringWithFormat:@"Welcome %@ %@", student.firstName, student.lastName];
+            }
+        }
+        
     }
 }
-
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -89,12 +83,10 @@
 {
     return 1;
 }
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [values count];
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
@@ -114,7 +106,6 @@
     
     
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DayDetailViewController *ddvc = [DayDetailViewController new];
@@ -122,22 +113,15 @@
     [self presentViewController:ddvc animated:YES completion:nil];
     
 }
-
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 - (IBAction)ReadMessage:(id)sender {
     PrivateMessageViewController *pmvc = [PrivateMessageViewController new];
     pmvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:pmvc animated:YES completion:nil];
 }
-
-
 -(void)getStudentAlert
 {
-
 }
-
-
 @end

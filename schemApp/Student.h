@@ -2,29 +2,34 @@
 //  Student.h
 //  schemApp
 //
-//  Created by Patrik Sundbäck on 9/17/13.
+//  Created by sebastian holmqvist on 2013-09-11.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "User.h"
 
-@class Course;
+@interface Student : NSObject <User>
+@property (nonatomic, copy) NSString* studentSignum;
+@property (nonatomic, copy) NSString* firstName;
+@property (nonatomic, copy) NSString* lastName;
+@property (nonatomic, copy) NSMutableArray *unreadMessages;
+@property (nonatomic, copy) NSMutableArray *readMessages;
 
-@interface Student : NSManagedObject
+#pragma mark - Init Students
+-(id) initWithFirstName: (NSString*) targetFirstName lastName: (NSString*) targetLastName studentSignum: (NSString*)targetSignum;
 
-@property (nonatomic, retain) NSString * studentSignum;
-@property (nonatomic, retain) NSString * firstName;
-@property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) NSNumber * isActive;
-@property (nonatomic, retain) NSSet *courses;
-@end
+#pragma mark - Show Lessons methods
 
-@interface Student (CoreDataGeneratedAccessors)
+-(void) showLessonsForDate: (NSString*) yyyyMMdd;
+-(void) showLessonsForWeek: (NSString*) targetWeek;
 
-- (void)addCoursesObject:(Course *)value;
-- (void)removeCoursesObject:(Course *)value;
-- (void)addCourses:(NSSet *)values;
-- (void)removeCourses:(NSSet *)values;
+#pragma mark - Message methods
+-(void) sendMessage: (NSString*) targetMessage ToSpecificUser: (id<User>) targetUser;
+-(void) readUnreadMessages;
+
+#pragma mark - Return methods
+-(NSDictionary*)returnStudentAsNSDictionary;
++(id)returnStudentFromDictionary: (NSDictionary*)targetStudentAsNSDictionary;
 
 @end

@@ -16,6 +16,7 @@
 +(Storage*) sharedStorage;
 
 +(void) saveManagedContext:(NSManagedObjectContext*) targetContext;
+
 +(void) readData;
 
 @end

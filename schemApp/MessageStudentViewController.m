@@ -84,7 +84,7 @@
 {
     NSDate *currentDateTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEE, HH:mm"];
+    [dateFormatter setDateFormat:@"EEE, HH:mm \n\n"];
     NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
     NSLog(@"%@", dateInStringFormated);
     MessageText.text = dateInStringFormated;

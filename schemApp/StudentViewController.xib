@@ -9,7 +9,7 @@
                 <outlet property="MessageToAll" destination="Fuy-6y-wdJ" id="t16-hG-jyf"/>
                 <outlet property="SchemTabelView" destination="svo-XH-Qf3" id="TTb-Of-iMD"/>
                 <outlet property="TodaysLections" destination="VjH-Px-nEd" id="bxH-tN-QKJ"/>
-                <outlet property="WelcomeStudentLabel" destination="04S-gk-15H" id="Ze4-N3-Ep7"/>
+                <outlet property="WelcomeStudentLabel" destination="OBO-7g-Vgq" id="8FB-A7-MjS"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -62,7 +62,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04S-gk-15H">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBO-7g-Vgq">
                     <rect key="frame" x="62" y="11" width="196" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

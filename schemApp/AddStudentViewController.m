@@ -7,13 +7,9 @@
 //
 
 #import "AddStudentViewController.h"
-#import "Storage.h"
-#import "Student.h"
 
 @interface AddStudentViewController ()
-{
-    NSManagedObjectContext *context;
-}
+
 @end
 
 @implementation AddStudentViewController
@@ -23,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        context = [Storage sharedStorage].context;
     }
     return self;
 }
@@ -42,18 +37,6 @@
 
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)SaveStudent:(id)sender
-{
-    Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
-    student.firstName = self.FirstNameText.text;
-    student.lastName = self.LastNameText.text;
-    student.studentSignum = self.IdText.text;
-    student.isActive = [NSNumber numberWithBool:YES];
-    
-    [Storage saveManagedContext:context];
-    [Storage readData];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

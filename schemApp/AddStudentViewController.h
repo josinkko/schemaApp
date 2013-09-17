@@ -10,7 +10,6 @@
 
 @interface AddStudentViewController : UIViewController
 - (IBAction)Back:(id)sender;
-- (IBAction)SaveStudent:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *FirstNameText;
 @property (weak, nonatomic) IBOutlet UITextField *LastNameText;

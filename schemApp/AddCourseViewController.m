@@ -22,11 +22,9 @@ selectedTimeStop,
 DayArray,
 TimeArray,
 TimeArrayStop,
-thePickerView,
-CourseInformation,
-ReadingInformation,
-CourseName;
+thePickerView;
 
+@synthesize CourseInformation,ReadingInformation,CourseName;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

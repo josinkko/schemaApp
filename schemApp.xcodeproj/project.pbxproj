@@ -27,7 +27,6 @@
 		6453573517DF452C00122D75 /* DayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453573317DF452C00122D75 /* DayDetailViewController.xib */; };
 		6453573A17DF966200122D75 /* PrivateMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453573817DF966200122D75 /* PrivateMessageViewController.m */; };
 		6453573B17DF966200122D75 /* PrivateMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453573917DF966200122D75 /* PrivateMessageViewController.xib */; };
-		6453574317E05A7200122D75 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453574217E05A7200122D75 /* Student.m */; };
 		6453575517E06D7F00122D75 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6453575417E06D7F00122D75 /* list.plist */; };
 		647EED1A17DE120C004285C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1917DE120C004285C6 /* Foundation.framework */; };
 		647EED1C17DE120C004285C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EED1B17DE120C004285C6 /* CoreGraphics.framework */; };
@@ -54,6 +53,7 @@
 		DB9343C817E72CAF009B3987 /* AddCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9343C617E72CAF009B3987 /* AddCourseViewController.xib */; };
 		DB9343CC17E72CBE009B3987 /* AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9343CA17E72CBE009B3987 /* AdminViewController.m */; };
 		DB9343CD17E72CBE009B3987 /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9343CB17E72CBE009B3987 /* AdminViewController.xib */; };
+		DB9343D317E84945009B3987 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9343D217E84945009B3987 /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +100,6 @@
 		6453573817DF966200122D75 /* PrivateMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateMessageViewController.m; sourceTree = "<group>"; };
 		6453573917DF966200122D75 /* PrivateMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivateMessageViewController.xib; sourceTree = "<group>"; };
 		6453574017E05A4500122D75 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		6453574117E05A7200122D75 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		6453574217E05A7200122D75 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		6453575417E06D7F00122D75 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		647EED1617DE120C004285C6 /* schemApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schemApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647EED1917DE120C004285C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +135,8 @@
 		DB9343C917E72CBE009B3987 /* AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminViewController.h; sourceTree = "<group>"; };
 		DB9343CA17E72CBE009B3987 /* AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminViewController.m; sourceTree = "<group>"; };
 		DB9343CB17E72CBE009B3987 /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
+		DB9343D117E84945009B3987 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		DB9343D217E84945009B3987 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,8 +267,8 @@
 				6453574017E05A4500122D75 /* User.h */,
 				A718C3C717E70F840074E604 /* Course.h */,
 				A718C3C817E70F840074E604 /* Course.m */,
-				6453574117E05A7200122D75 /* Student.h */,
-				6453574217E05A7200122D75 /* Student.m */,
+				DB9343D117E84945009B3987 /* Student.h */,
+				DB9343D217E84945009B3987 /* Student.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -533,11 +533,11 @@
 				647EED2C17DE120C004285C6 /* AppDelegate.m in Sources */,
 				A718C3C917E70F840074E604 /* Course.m in Sources */,
 				6439655C17E1BE2600E4511A /* Couch.m in Sources */,
-				6453574317E05A7200122D75 /* Student.m in Sources */,
 				A718C3CC17E70FCF0074E604 /* Storage.m in Sources */,
 				645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */,
 				647EED2817DE120C004285C6 /* main.m in Sources */,
 				647EED2F17DE120C004285C6 /* schemApp.xcdatamodeld in Sources */,
+				DB9343D317E84945009B3987 /* Student.m in Sources */,
 				6453571717DF301400122D75 /* UpdateStudentViewController.m in Sources */,
 				6453571117DF2DB800122D75 /* AddStudentViewController.m in Sources */,
 				6453573A17DF966200122D75 /* PrivateMessageViewController.m in Sources */,

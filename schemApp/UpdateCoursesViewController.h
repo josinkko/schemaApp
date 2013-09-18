@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UpdateCoursesViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface UpdateCoursesViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>
 
 - (IBAction)Back:(id)sender;
 - (IBAction)ClearInfo:(id)sender;
@@ -17,7 +17,7 @@
 
 - (IBAction)SaveUpdate:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UISearchBar *SearchCourse;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchCourse;
 
 @property (weak, nonatomic) IBOutlet UITextField *UpdateCourseName;
 @property (weak, nonatomic) IBOutlet UITextView *UpdateCourseInfo;

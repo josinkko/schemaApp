@@ -8,6 +8,7 @@
 
 #import "Storage.h"
 #import "Course.h"
+#import "Student.h"
 
 @interface Storage ()
 
@@ -63,11 +64,17 @@
     NSManagedObjectContext *readContext = [Storage sharedStorage].context;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Course"];
+    NSFetchRequest *studentRequest = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
     
     NSArray * result = [readContext executeFetchRequest:request error:nil];
+    NSArray * studentResult = [readContext executeFetchRequest:studentRequest error:nil];
     
     for (Course *course in result) {
         NSLog(@" \r%@, \r%@, \r%@, \r%@, \r%@, \r%@", course.courseName, course.courseDescription, course.courseReadingMaterial, course.courseDay, course.courseStart, course.courseStop);
+    }
+    for (Student *student in studentResult)
+    {
+        NSLog(@"\r%@, \r%@, \r%@", student.firstName, student.lastName, student.studentSignum);
     }
 }
 

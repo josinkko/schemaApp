@@ -12,8 +12,10 @@
 		6439655617E1BD7200E4511A /* Message+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655517E1BD7200E4511A /* Message+Json.m */; };
 		6439655917E1BDAE00E4511A /* SendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655817E1BDAE00E4511A /* SendMessage.m */; };
 		6439655C17E1BE2600E4511A /* Couch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439655B17E1BE2600E4511A /* Couch.m */; };
-		645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645356F117DE473F00122D75 /* MessageStudentViewController.m */; };
-		645356F417DE473F00122D75 /* MessageStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645356F217DE473F00122D75 /* MessageStudentViewController.xib */; };
+		6439F86C17E99776005C22E1 /* MessageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439F86A17E99776005C22E1 /* MessageStudentViewController.m */; };
+		6439F86D17E99776005C22E1 /* MessageStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6439F86B17E99776005C22E1 /* MessageStudentViewController.xib */; };
+		6439F87117E997B0005C22E1 /* MessageAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6439F86F17E997B0005C22E1 /* MessageAllViewController.m */; };
+		6439F87217E997B0005C22E1 /* MessageAllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6439F87017E997B0005C22E1 /* MessageAllViewController.xib */; };
 		6453570B17DF2B2C00122D75 /* DeleteCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453570917DF2B2C00122D75 /* DeleteCourseViewController.m */; };
 		6453570C17DF2B2C00122D75 /* DeleteCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6453570A17DF2B2C00122D75 /* DeleteCourseViewController.xib */; };
 		6453571117DF2DB800122D75 /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6453570F17DF2DB800122D75 /* AddStudentViewController.m */; };
@@ -45,8 +47,6 @@
 		647EED4517DE120C004285C6 /* schemAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED4417DE120C004285C6 /* schemAppTests.m */; };
 		647EED5217DE1269004285C6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED5017DE1269004285C6 /* MainViewController.m */; };
 		647EED5317DE1269004285C6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647EED5117DE1269004285C6 /* MainViewController.xib */; };
-		647EED6A17DE3EAC004285C6 /* MessageAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647EED6817DE3EAC004285C6 /* MessageAllViewController.m */; };
-		647EED6B17DE3EAC004285C6 /* MessageAllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647EED6917DE3EAC004285C6 /* MessageAllViewController.xib */; };
 		A718C3C917E70F840074E604 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C3C817E70F840074E604 /* Course.m */; };
 		A718C3CC17E70FCF0074E604 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = A718C3CB17E70FCF0074E604 /* Storage.m */; };
 		DB9343C717E72CAF009B3987 /* AddCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9343C517E72CAF009B3987 /* AddCourseViewController.m */; };
@@ -77,9 +77,12 @@
 		6439655817E1BDAE00E4511A /* SendMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessage.m; sourceTree = "<group>"; };
 		6439655A17E1BE2600E4511A /* Couch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Couch.h; sourceTree = "<group>"; };
 		6439655B17E1BE2600E4511A /* Couch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Couch.m; sourceTree = "<group>"; };
-		645356F017DE473F00122D75 /* MessageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStudentViewController.h; sourceTree = "<group>"; };
-		645356F117DE473F00122D75 /* MessageStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStudentViewController.m; sourceTree = "<group>"; };
-		645356F217DE473F00122D75 /* MessageStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageStudentViewController.xib; sourceTree = "<group>"; };
+		6439F86917E99776005C22E1 /* MessageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageStudentViewController.h; sourceTree = "<group>"; };
+		6439F86A17E99776005C22E1 /* MessageStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageStudentViewController.m; sourceTree = "<group>"; };
+		6439F86B17E99776005C22E1 /* MessageStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageStudentViewController.xib; sourceTree = "<group>"; };
+		6439F86E17E997B0005C22E1 /* MessageAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAllViewController.h; sourceTree = "<group>"; };
+		6439F86F17E997B0005C22E1 /* MessageAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAllViewController.m; sourceTree = "<group>"; };
+		6439F87017E997B0005C22E1 /* MessageAllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageAllViewController.xib; sourceTree = "<group>"; };
 		6453570817DF2B2C00122D75 /* DeleteCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteCourseViewController.h; sourceTree = "<group>"; };
 		6453570917DF2B2C00122D75 /* DeleteCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteCourseViewController.m; sourceTree = "<group>"; };
 		6453570A17DF2B2C00122D75 /* DeleteCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteCourseViewController.xib; sourceTree = "<group>"; };
@@ -122,9 +125,6 @@
 		647EED4F17DE1269004285C6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		647EED5017DE1269004285C6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		647EED5117DE1269004285C6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		647EED6717DE3EAC004285C6 /* MessageAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAllViewController.h; sourceTree = "<group>"; };
-		647EED6817DE3EAC004285C6 /* MessageAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAllViewController.m; sourceTree = "<group>"; };
-		647EED6917DE3EAC004285C6 /* MessageAllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageAllViewController.xib; sourceTree = "<group>"; };
 		A718C3C717E70F840074E604 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		A718C3C817E70F840074E604 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		A718C3CA17E70FCF0074E604 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
@@ -375,37 +375,37 @@
 			isa = PBXGroup;
 			children = (
 				DB9343C917E72CBE009B3987 /* AdminViewController.h */,
-				DB9343CA17E72CBE009B3987 /* AdminViewController.m */,
 				DB9343CB17E72CBE009B3987 /* AdminViewController.xib */,
+				DB9343CA17E72CBE009B3987 /* AdminViewController.m */,
+				6496DE1517E8D1E200D55E47 /* MessageToStudent */,
+				6496DE0F17E8D1AD00D55E47 /* MessageToAll */,
 				6453570717DF2B1600122D75 /* DeleteCourse */,
 				645356FB17DF1ACB00122D75 /* AddNewCourse */,
 				6453570117DF200700122D75 /* UpdateCourse */,
 				6453571317DF2FB800122D75 /* UpdateStudent */,
 				6453570D17DF2DA600122D75 /* AddNewStudent */,
-				647EED6617DE3E95004285C6 /* MessageToAll */,
-				647EED5B17DE3A1A004285C6 /* MessageToStudent */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
 		};
-		647EED5B17DE3A1A004285C6 /* MessageToStudent */ = {
+		6496DE0F17E8D1AD00D55E47 /* MessageToAll */ = {
 			isa = PBXGroup;
 			children = (
-				645356F017DE473F00122D75 /* MessageStudentViewController.h */,
-				645356F117DE473F00122D75 /* MessageStudentViewController.m */,
-				645356F217DE473F00122D75 /* MessageStudentViewController.xib */,
-			);
-			name = MessageToStudent;
-			sourceTree = "<group>";
-		};
-		647EED6617DE3E95004285C6 /* MessageToAll */ = {
-			isa = PBXGroup;
-			children = (
-				647EED6717DE3EAC004285C6 /* MessageAllViewController.h */,
-				647EED6817DE3EAC004285C6 /* MessageAllViewController.m */,
-				647EED6917DE3EAC004285C6 /* MessageAllViewController.xib */,
+				6439F86E17E997B0005C22E1 /* MessageAllViewController.h */,
+				6439F86F17E997B0005C22E1 /* MessageAllViewController.m */,
+				6439F87017E997B0005C22E1 /* MessageAllViewController.xib */,
 			);
 			name = MessageToAll;
+			sourceTree = "<group>";
+		};
+		6496DE1517E8D1E200D55E47 /* MessageToStudent */ = {
+			isa = PBXGroup;
+			children = (
+				6439F86917E99776005C22E1 /* MessageStudentViewController.h */,
+				6439F86A17E99776005C22E1 /* MessageStudentViewController.m */,
+				6439F86B17E99776005C22E1 /* MessageStudentViewController.xib */,
+			);
+			name = MessageToStudent;
 			sourceTree = "<group>";
 		};
 		DBC0FF0317E0D88000BAF2E8 /* Storage */ = {
@@ -502,12 +502,12 @@
 				6453572317DF35C600122D75 /* Mail.png in Resources */,
 				6453571817DF301400122D75 /* UpdateStudentViewController.xib in Resources */,
 				6453570C17DF2B2C00122D75 /* DeleteCourseViewController.xib in Resources */,
+				6439F87217E997B0005C22E1 /* MessageAllViewController.xib in Resources */,
+				6439F86D17E99776005C22E1 /* MessageStudentViewController.xib in Resources */,
 				647EED5317DE1269004285C6 /* MainViewController.xib in Resources */,
 				647EED3117DE120C004285C6 /* Images.xcassets in Resources */,
 				6453571E17DF32CB00122D75 /* StudentViewController.xib in Resources */,
 				6453573B17DF966200122D75 /* PrivateMessageViewController.xib in Resources */,
-				645356F417DE473F00122D75 /* MessageStudentViewController.xib in Resources */,
-				647EED6B17DE3EAC004285C6 /* MessageAllViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +534,6 @@
 				A718C3C917E70F840074E604 /* Course.m in Sources */,
 				6439655C17E1BE2600E4511A /* Couch.m in Sources */,
 				A718C3CC17E70FCF0074E604 /* Storage.m in Sources */,
-				645356F317DE473F00122D75 /* MessageStudentViewController.m in Sources */,
 				647EED2817DE120C004285C6 /* main.m in Sources */,
 				647EED2F17DE120C004285C6 /* schemApp.xcdatamodeld in Sources */,
 				DB9343D317E84945009B3987 /* Student.m in Sources */,
@@ -543,8 +542,9 @@
 				6453573A17DF966200122D75 /* PrivateMessageViewController.m in Sources */,
 				6439655017E0A6E200E4511A /* UpdateCoursesViewController.m in Sources */,
 				6453571D17DF32CB00122D75 /* StudentViewController.m in Sources */,
+				6439F86C17E99776005C22E1 /* MessageStudentViewController.m in Sources */,
 				6439655617E1BD7200E4511A /* Message+Json.m in Sources */,
-				647EED6A17DE3EAC004285C6 /* MessageAllViewController.m in Sources */,
+				6439F87117E997B0005C22E1 /* MessageAllViewController.m in Sources */,
 				6453570B17DF2B2C00122D75 /* DeleteCourseViewController.m in Sources */,
 				647EED5217DE1269004285C6 /* MainViewController.m in Sources */,
 			);

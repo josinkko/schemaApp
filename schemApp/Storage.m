@@ -63,11 +63,17 @@
     NSManagedObjectContext *readContext = [Storage sharedStorage].context;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Course"];
+    NSFetchRequest *studentRequest = [NSFetchRequest fetchRequestWithEntityName:@"Course"];
     
     NSArray * result = [readContext executeFetchRequest:request error:nil];
     
     for (Course *course in result) {
         NSLog(@" \r%@, \r%@, \r%@, \r%@, \r%@, \r%@", course.courseName, course.courseDescription, course.courseReadingMaterial, course.courseDay, course.courseStart, course.courseStop);
+    }
+    for (Student *student in studentRequest)
+    {
+
+        NSLog(@"\r%@, \r%@, \r%@", student.firstName, student.lastName, student.studentSignum);
     }
 }
 

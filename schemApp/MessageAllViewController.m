@@ -13,7 +13,7 @@
 
 @end
 @implementation MessageAllViewController
-@synthesize MessageText,FromTextField,MessageSent;
+@synthesize MessageText,FromTextField,MessageSent,SendActivIndicator;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +26,8 @@
 {
     [self timeStamp];
     [super viewDidLoad];
+    [self activityStop];
+
     MessageText.layer.borderColor = [UIColor lightGrayColor].CGColor;
     MessageText.layer.borderWidth = 0.5f;
 }
@@ -40,6 +42,7 @@
 }
 #pragma mark MessageToAll
 - (IBAction)SendMessage:(id)sender {
+    [self activityStart];
     NSLog(@"***************  SEND MESSEGE  ***************");
     Couch *couch =[[Couch alloc] init];
     SendMessage *message = [[SendMessage alloc]initWithMessage:self.MessageText.text
@@ -48,12 +51,24 @@
         HttpMethod:@"POST" body:[message json] onComplete:^(NSURLResponse *response,
                                                             NSData *data,
                                                             NSError *error) {
-    NSLog(@"%@", [Couch parseData:data]);
-    NSLog(@"***************  SUCCESS  ***************");
-        
-        }];
-    MessageSent.text = @"Message sent";
+            
+        if(!error)
+            {
+                NSLog(@"%@", [Couch parseData:data]);
+                NSLog(@"***************  SUCCESS  ***************");
+                [self activityStop];
 
+                MessageSent.text = @"Message sent";
+            }
+        else
+            {
+                MessageSent.text = @"No connection, please try again";
+                [self activityStop];
+                NSLog(@"error");
+            }
+        }];
+        
+  
     }
 }
 
@@ -85,5 +100,16 @@
     MessageText.text = dateInStringFormated;
 }
 
+
+-(void)activityStart
+{
+    [SendActivIndicator startAnimating];
+
+
+}
+-(void)activityStop
+{
+    [SendActivIndicator stopAnimating];
+}
 
 @end

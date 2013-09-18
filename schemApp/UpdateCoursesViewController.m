@@ -7,9 +7,13 @@
 //
 
 #import "UpdateCoursesViewController.h"
+#import "Course.h"
+#import "Storage.h"
 
 @interface UpdateCoursesViewController ()
-
+{
+    NSMutableArray *searchResultsArray;
+}
 @end
 
 @implementation UpdateCoursesViewController
@@ -30,8 +34,10 @@
     UpdateCourseInfo.layer.borderWidth = 0.5f;
     UpdateCourseRead.layer.borderColor = [UIColor lightGrayColor].CGColor;
     UpdateCourseRead.layer.borderWidth = 0.5f;
-
-
+    self.searchCourse.delegate = self;
+    self.searchDisplayController.delegate = self;
+    self.searchDisplayController.searchResultsDataSource = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,10 +59,9 @@
     [self textViewDidBeginEditing:UpdateCourseRead];
 }
 
-
-
-
 - (IBAction)SaveUpdate:(id)sender {
+    
+    
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -73,6 +78,46 @@
 {
     
     textView.text = @"";
+}
+
+#pragma mark - Search-functions
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [searchResultsArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"Cell";
+    
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+    }
+    [[cell textLabel] setText:[[searchResultsArray objectAtIndex:indexPath.row] courseName]];
+
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Course *currentCourse = [searchResultsArray objectAtIndex:indexPath.row];
+    NSLog(@"SELECTED ROW: %@", currentCourse.courseName);
+    [[self UpdateCourseInfo] setText:currentCourse.courseDescription];
+    [[self UpdateCourseName] setText:currentCourse.courseName];
+    [[self UpdateCourseRead] setText:currentCourse.courseReadingMaterial];
+    [[self searchDisplayController] setActive:NO animated:YES];
+}
+
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSString *predicateString = @"courseName == %@";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString, [searchBar text]];
+    searchResultsArray = [[Storage sharedStorage] readCourseWithPredicate:predicate];
+    
+    [[[self searchDisplayController] searchResultsTableView] reloadData];
 }
 
 @end

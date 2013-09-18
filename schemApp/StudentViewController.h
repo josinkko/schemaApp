@@ -11,6 +11,7 @@
 @interface StudentViewController : UIViewController
 - (IBAction)Back:(id)sender;
 - (IBAction)ReadMessage:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *WelcomeStudentLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *TodaysLections;
 

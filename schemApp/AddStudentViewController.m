@@ -50,7 +50,6 @@
     student.firstName = self.FirstNameText.text;
     student.lastName = self.LastNameText.text;
     student.studentSignum = self.IdText.text;
-
     student.isActive = [NSNumber numberWithBool:YES];
     
     [Storage saveManagedContext:context];

@@ -8,7 +8,6 @@
 
 #import "Storage.h"
 #import "Course.h"
-#import "Student.h"
 
 @interface Storage ()
 
@@ -63,18 +62,48 @@
 {
     NSManagedObjectContext *readContext = [Storage sharedStorage].context;
     
-    NSFetchRequest *courseRequest = [NSFetchRequest fetchRequestWithEntityName:@"Course"];
-    NSFetchRequest *studentRequest = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
-    NSArray * courseResult = [readContext executeFetchRequest:courseRequest error:nil];
-    NSArray * studentResult = [readContext executeFetchRequest:studentRequest error:nil];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Course"];
     
-    for (Course *course in courseResult) {
+    NSArray * result = [readContext executeFetchRequest:request error:nil];
+    
+    for (Course *course in result) {
         NSLog(@" \r%@, \r%@, \r%@, \r%@, \r%@, \r%@", course.courseName, course.courseDescription, course.courseReadingMaterial, course.courseDay, course.courseStart, course.courseStop);
     }
-    for (Student *student in studentResult) {
-        NSLog(@" \r%@, \r%@, \r%@", student.firstName, student.lastName, student.studentSignum);
-    }
 }
+
+- (NSMutableArray *) readCourseWithPredicate: (NSPredicate *) predicate
+{
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:[self context]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDesc];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    
+    NSArray *result = [[self context] executeFetchRequest:fetchRequest error:&error];
+    if (error) {
+        NSLog(@"Couldn't fetch, reason: %@", [error localizedDescription]);
+    }
+    
+    return result;
+}
+
+- (void) updateCourseWithCourseName: (NSString *) courseName withNewInfo: (Course *) newCourse
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"courseName == %@", courseName];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:[self context]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDesc];
+    [fetchRequest setPredicate:predicate];
+    
+    Course *courseToDelete = [[[self context] executeFetchRequest:fetchRequest error:nil] lastObject];
+    [[self context] deleteObject:courseToDelete];
+    
+    NSError *error = nil;
+    [[self context] save:&error];
+
+}
+
 
 #pragma mark - Private model and PersistentStoreCoordinator
 

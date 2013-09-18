@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Course;
+
 @interface Storage : NSObject
 
 @property (nonatomic, readonly, strong)NSManagedObjectContext *context;
@@ -16,6 +18,9 @@
 +(Storage*) sharedStorage;
 
 +(void) saveManagedContext:(NSManagedObjectContext*) targetContext;
+
 +(void) readData;
 
+- (NSMutableArray *) readCourseWithPredicate: (NSPredicate *) predicate;
+- (void) updateCourseWithCourseName: (NSString *) courseName withNewInfo: (Course *) newCourse;
 @end

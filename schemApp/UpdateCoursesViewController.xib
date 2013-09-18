@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4488.2" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpdateCoursesViewController">
             <connections>
-                <outlet property="SearchCourse" destination="Obb-m0-Tlr" id="Rax-vp-Hgv"/>
                 <outlet property="UpdateCourseInfo" destination="lnO-ks-iF8" id="HGh-VO-xd0"/>
                 <outlet property="UpdateCourseName" destination="EOh-mf-2QC" id="UKr-TU-cRp"/>
                 <outlet property="UpdateCourseRead" destination="Y9M-8z-5U3" id="DAr-wU-sZH"/>
-                <outlet property="selecteTime" destination="iXA-Ep-9rm" id="Lbl-gC-IuO"/>
-                <outlet property="selectedDay" destination="zPJ-32-aeR" id="K7d-Yg-0Xd"/>
-                <outlet property="selectedTimeStop" destination="Txl-e6-JMI" id="Cbr-K2-7ls"/>
-                <outlet property="thePickerView" destination="nbE-Kg-99u" id="Byp-1c-eGS"/>
+                <outlet property="searchCourse" destination="pdn-0K-Uy1" id="B0O-m0-aSw"/>
+                <outlet property="searchDisplayController" destination="ROO-Hy-gwy" id="lh9-Nb-vsi"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -33,26 +30,22 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for course name" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-m0-Tlr">
-                    <rect key="frame" x="0.0" y="44" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Update course name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EOh-mf-2QC">
-                    <rect key="frame" x="58" y="93" width="205" height="30"/>
+                    <rect key="frame" x="58" y="97" width="205" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update course information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7W-x2-9Fb">
-                    <rect key="frame" x="44" y="122" width="232" height="21"/>
+                    <rect key="frame" x="44" y="135" width="232" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOW-Sc-x8o">
-                    <rect key="frame" x="25" y="233" width="46" height="30"/>
+                    <rect key="frame" x="20" y="239" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Clear">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -61,14 +54,15 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update reading information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUn-md-6Zt">
-                    <rect key="frame" x="44" y="251" width="232" height="21"/>
+                    <rect key="frame" x="44" y="273" width="232" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-Vp-cUA">
-                    <rect key="frame" x="137" y="538" width="46" height="30"/>
+                    <rect key="frame" x="137" y="501" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Save">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -77,22 +71,23 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-ks-iF8">
-                    <rect key="frame" x="25" y="141" width="280" height="96"/>
+                    <rect key="frame" x="20" y="152" width="280" height="79"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9M-8z-5U3">
-                    <rect key="frame" x="25" y="271" width="280" height="51"/>
+                    <rect key="frame" x="25" y="291" width="280" height="87"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faW-aI-WOY">
-                    <rect key="frame" x="25" y="329" width="46" height="30"/>
+                    <rect key="frame" x="25" y="386" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Clear">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -100,36 +95,27 @@
                         <action selector="ClearRead:" destination="-1" eventType="touchUpInside" id="ZuX-bZ-m0g"/>
                     </connections>
                 </button>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-Kg-99u">
-                    <rect key="frame" x="25" y="346" width="280" height="162"/>
+                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="pdn-0K-Uy1">
+                    <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="Ee1-xu-6tD"/>
-                        <outlet property="delegate" destination="-1" id="Qgq-pS-Vvy"/>
+                        <outlet property="delegate" destination="-1" id="Faq-Zu-uZA"/>
                     </connections>
-                </pickerView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPJ-32-aeR">
-                    <rect key="frame" x="79" y="330" width="86" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXA-Ep-9rm">
-                    <rect key="frame" x="175" y="330" width="61" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-e6-JMI">
-                    <rect key="frame" x="244" y="330" width="61" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <searchDisplayController id="ROO-Hy-gwy">
+            <connections>
+                <outlet property="delegate" destination="-1" id="Ph1-OH-NZb"/>
+                <outlet property="searchBar" destination="pdn-0K-Uy1" id="qdG-q6-Ep4"/>
+                <outlet property="searchContentsController" destination="-1" id="NQZ-tN-G9w"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="WNa-hQ-CbP"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="eCH-i0-Zyu"/>
+            </connections>
+        </searchDisplayController>
     </objects>
 </document>

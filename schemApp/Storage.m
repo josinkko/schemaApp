@@ -71,6 +71,40 @@
     }
 }
 
+- (NSMutableArray *) readCourseWithPredicate: (NSPredicate *) predicate
+{
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:[self context]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDesc];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    
+    NSArray *result = [[self context] executeFetchRequest:fetchRequest error:&error];
+    if (error) {
+        NSLog(@"Couldn't fetch, reason: %@", [error localizedDescription]);
+    }
+    
+    return result;
+}
+
+- (void) updateCourseWithCourseName: (NSString *) courseName withNewInfo: (Course *) newCourse
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"courseName == %@", courseName];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:[self context]];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entityDesc];
+    [fetchRequest setPredicate:predicate];
+    
+    Course *courseToDelete = [[[self context] executeFetchRequest:fetchRequest error:nil] lastObject];
+    [[self context] deleteObject:courseToDelete];
+    
+    NSError *error = nil;
+    [[self context] save:&error];
+
+}
+
+
 #pragma mark - Private model and PersistentStoreCoordinator
 
 -(NSManagedObjectModel *)model

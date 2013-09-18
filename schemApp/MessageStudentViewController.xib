@@ -11,6 +11,7 @@
                 <outlet property="MessageText" destination="rAC-wB-lr7" id="Oua-bM-VFw"/>
                 <outlet property="MessageTo" destination="JBa-jM-Cfb" id="EQY-MI-Fkg"/>
                 <outlet property="Search" destination="SJB-Hk-PAg" id="ngI-CB-9ww"/>
+                <outlet property="SendActivIndicator" destination="rIx-hE-0Qd" id="3RV-7L-shX"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -83,6 +84,11 @@
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-hE-0Qd">
+                    <rect key="frame" x="150" y="101" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

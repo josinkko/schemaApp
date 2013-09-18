@@ -14,7 +14,7 @@
 @end
 
 @implementation MessageStudentViewController
-@synthesize MessageText,MessageFrom,MessageTo,MessageSent,SendActivIndicator;
+@synthesize MessageText,MessageFrom,MessageTo,MessageSent;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,8 +28,6 @@
 {
     [self timeStamp];
     [super viewDidLoad];
-    [self activityStop];
-
     MessageText.layer.borderColor = [UIColor lightGrayColor].CGColor;
     MessageText.layer.borderWidth = 0.5f;
 }
@@ -45,7 +43,6 @@
 }
 
 - (IBAction)send:(id)sender {
-    [self activityStart];
     NSLog(@"***************  SEND MESSEGE  ***************");
     Couch *couch =[[Couch alloc] init];
     SendMessage *message = [[SendMessage alloc]initWithMessage:self.MessageText.text
@@ -54,20 +51,11 @@
              HttpMethod:@"POST" body:[message json] onComplete:^(NSURLResponse *response,
                                                                  NSData *data,
                                                                  NSError *error) {
-            if(!error)
-                 {
-                     NSLog(@"%@", [Couch parseData:data]);
-                     NSLog(@"***************  SUCCESS  ***************");
-                     [self activityStop];
-                     MessageSent.text = @"Message sent";
-                 }
-            else
-                {
-                     MessageSent.text = @"No connection, please try again";
-                     [self activityStop];
-                     NSLog(@"error");
-                 }
+                 NSLog(@"%@", [Couch parseData:data]);
+                 NSLog(@"***************  SUCCESS  ***************");
+                 
              }];
+        MessageSent.text = @"Message sent";
     }
 }
 
@@ -96,21 +84,10 @@
 {
     NSDate *currentDateTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEE, HH:mm \n\n"];
+    [dateFormatter setDateFormat:@"EEE, HH:mm"];
     NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
     NSLog(@"%@", dateInStringFormated);
     MessageText.text = dateInStringFormated;
 }
 
-
--(void)activityStart
-{
-    [SendActivIndicator startAnimating];
-    
-    
-}
--(void)activityStop
-{
-    [SendActivIndicator stopAnimating];
-}
 @end

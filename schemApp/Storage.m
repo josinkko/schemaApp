@@ -70,7 +70,7 @@
     NSArray * studentResult = [readContext executeFetchRequest:studentRequest error:nil];
     
     for (Course *course in result) {
-        NSLog(@" \r%@, \r%@, \r%@, \r%@, \r%@, \r%@", course.courseName, course.courseDescription, course.courseReadingMaterial, course.courseDay, course.courseStart, course.courseStop);
+        NSLog(@" \r%@, \r%@, \r%@, \r%@", course.courseName, course.courseDescription, course.courseReadingMaterial, course.lesson);
     }
     for (Student *student in studentResult)
     {

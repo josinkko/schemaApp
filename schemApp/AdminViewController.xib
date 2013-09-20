@@ -54,7 +54,6 @@
                     </state>
                     <connections>
                         <action selector="AddCourse:" destination="-1" eventType="touchUpInside" id="Dio-vn-KiA"/>
-                        <action selector="UpdateSchem:" destination="-1" eventType="touchUpInside" id="s13-10-bdC"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mps-nM-LdX">

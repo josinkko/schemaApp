@@ -7,22 +7,30 @@
 //
 
 #import "DayDetailViewController.h"
-
+#import "Student.h"
+#import "Course.h"
+#import "DetailViewController.h"
 @interface DayDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation DayDetailViewController
 {
-    NSArray *values;
+    NSMutableArray *values;
     
 }
-
+@synthesize currentStudent;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
+    NSLog(@"curent student MMMMM%@",currentStudent);
+    values = [NSMutableArray new];
+    for (Course *course in currentStudent.courses) {
+        
+        [values addObject:course.courseName];
+        NSLog(@"%@",course);
+    }
     
 }
 
@@ -34,7 +42,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        values = @[@"08:00",@"09:00",@"10:00",@"11:00",@"12:00",@"13:00",@"14:00",@"15:00"];
+    
     }
     return self;
 }
@@ -45,7 +53,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%lu",(unsigned long)[values count]);
     return [values count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -55,20 +65,35 @@
     if(!cell)
     {
         NSLog(@"Creating new cell");
+        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
-    cell.textLabel.text = values[indexPath.row];
-    
+    cell.textLabel.text = [values objectAtIndex:indexPath.row];
+    NSLog(@"asasas :%@",values);
     return cell;
     
-    
+
     /////// göra en custom cell med två label, en som visar första tiden på dagen och en som visar sista.
     // i cellen finns resterande schema.
     
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController*dvc = [DetailViewController new];
+    dvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    dvc.currentStudent = currentStudent;
+
+    [self presentViewController:dvc animated:YES completion:nil];
     
 }
 
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
+
+
 @end

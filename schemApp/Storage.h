@@ -23,4 +23,5 @@
 
 - (NSMutableArray *) readCourseWithPredicate: (NSPredicate *) predicate;
 - (void) updateCourseWithCourseName: (NSString *) courseName withNewInfo: (Course *) newCourse;
+- (void) deleteCourseWithCourseName: (NSString *) courseName;
 @end

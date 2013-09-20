@@ -11,10 +11,11 @@
 #import "Student.h"
 #import "Course.h"
 
+
 @interface AddStudentViewController ()
 {
     NSManagedObjectContext *context;
-    
+    Student *student;
     NSMutableArray *searchResultsArray;
     
     
@@ -36,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
     self.searchCourse.delegate = self;
     self.searchDisplayController.delegate = self;
     self.searchDisplayController.searchResultsDataSource = self;
@@ -52,14 +54,14 @@
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+#pragma mark - Save student.
 
 - (IBAction)SaveStudent:(id)sender
 {
-    Student *student = [NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
+    
     student.firstName = self.FirstNameText.text;
     student.lastName = self.LastNameText.text;
     student.studentSignum = self.IdText.text;
-
     student.isActive = [NSNumber numberWithBool:YES];
     
     [Storage saveManagedContext:context];
@@ -127,8 +129,15 @@
 {
     Course *currentCourse = [searchResultsArray objectAtIndex:indexPath.row];
     NSLog(@"SELECTED ROW: %@", currentCourse.courseName);
+    NSLog(@"Adding Course %@", currentCourse);
+    
+    [student addCoursesObject:currentCourse];
+    
     [[self showLessonsLabel] setText:currentCourse.courseName];
     [[self searchDisplayController] setActive:NO animated:YES];
+    
+    NSLog(@"Added Course: %@", currentCourse);
+    NSLog(@"Student %@ now has %@", student, student.courses);
 }
 
 

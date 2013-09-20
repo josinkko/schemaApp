@@ -19,6 +19,7 @@
     selfAsJson[@"Message"] = self.message;
     selfAsJson[@"From"] = self.from;
     selfAsJson[@"StudentID"] = self.studentId;
+    selfAsJson[@"Time"] = self.time;
     
     
     return selfAsJson;

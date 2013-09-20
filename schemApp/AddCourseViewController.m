@@ -35,6 +35,8 @@ thePickerView;
          Load Shared CoreData Storage context.
          */
         context = [Storage sharedStorage].context;
+        NSLog(@"\r\r\rLoading AddCourse context %@\r\r\r", context);
+        
     }
     return self;
 }
@@ -45,7 +47,9 @@ thePickerView;
     [self setupBorders];
     [self setupPicker];
     lesson = [NSEntityDescription insertNewObjectForEntityForName:@"Lesson" inManagedObjectContext:context];
-
+    NSLog(@"\r\r\rWill we geat Storage?\r\r\r\r\r\r");
+    [Storage readData];
+    NSLog(@"\r\r\rDid we geat Storage?\r\r\r\r\r\r");
 }
 
 

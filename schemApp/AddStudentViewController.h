@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddStudentViewController : UIViewController
+@interface AddStudentViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>
 - (IBAction)Back:(id)sender;
+- (IBAction)SaveStudent:(id)sender;
+- (IBAction)addCourses:(id)sender;
+- (IBAction)cancelAddCourses:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchCourse;
+
+@property (weak, nonatomic) IBOutlet UILabel *showLessonsLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *FirstNameText;
 @property (weak, nonatomic) IBOutlet UITextField *LastNameText;

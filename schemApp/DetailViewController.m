@@ -1,19 +1,24 @@
 //
-//  DeleteCourseViewController.m
+//  DetailViewController.m
 //  schemApp
 //
-//  Created by sebastian holmqvist on 2013-09-10.
+//  Created by sebastian holmqvist on 2013-09-20.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
-#import "DeleteCourseViewController.h"
-
-@interface DeleteCourseViewController ()
+#import "DetailViewController.h"
+#import "Student.h"
+#import "Course.h"
+@interface DetailViewController ()
 
 @end
 
-@implementation DeleteCourseViewController
-
+@implementation DetailViewController
+{
+    NSMutableArray *values;
+    
+}
+@synthesize currentStudent,DetailViewText;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +31,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+
+    values = [NSMutableArray new];
+    for (Course *course in currentStudent.courses) {
+        
+        [values addObject:course.courseName];
+        NSLog(@"%@",course);
+    }
+    DetailViewText.text = [values description];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,21 +52,5 @@
 
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)DeleteYes:(id)sender {
-}
-
-- (IBAction)DeleteNo:(id)sender {
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    
-    return YES;
-}
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
 }
 @end

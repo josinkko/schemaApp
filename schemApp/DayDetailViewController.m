@@ -9,7 +9,10 @@
 #import "DayDetailViewController.h"
 #import "Student.h"
 #import "Course.h"
+<<<<<<< HEAD
 #import "DetailViewController.h"
+=======
+>>>>>>> patrikupload
 @interface DayDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end

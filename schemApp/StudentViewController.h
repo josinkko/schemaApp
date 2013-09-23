@@ -16,7 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *WelcomeStudentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TodaysLections;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *LoadingMessegesToAll;
+<<<<<<< HEAD
 @property (weak, nonatomic) IBOutlet UILabel *MessageToAll;
 @property (weak, nonatomic) IBOutlet UITableView *SchemTabelView;
+=======
+@property (weak, nonatomic) IBOutlet UITableView *messageTableView;
+>>>>>>> patrikupload
 @property (strong, nonatomic) Student *currentStudent;
 @end

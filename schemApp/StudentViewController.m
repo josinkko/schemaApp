@@ -20,24 +20,37 @@
 @end
 @implementation StudentViewController
 {
+<<<<<<< HEAD
     NSArray *values;
     NSManagedObjectContext *context;
 }
 @synthesize MessageToAll,WelcomeStudentLabel,LoadingMessegesToAll,SchemTabelView, currentStudent;
+=======
+    NSMutableArray *messages;
+    NSManagedObjectContext *context;
+}
+@synthesize WelcomeStudentLabel,LoadingMessegesToAll,messageTableView, currentStudent;
+>>>>>>> patrikupload
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
+<<<<<<< HEAD
         values = @[@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday"];
         context = [Storage sharedStorage].context;
+=======
+        context = [Storage sharedStorage].context;
+        messages = [NSMutableArray new];
+>>>>>>> patrikupload
         NSLog(@"\r\r\rLoading Student context %@\r\r\r", context);
     }
     return self;
 }
 - (void)viewDidLoad
 {
+<<<<<<< HEAD
     
     [super viewDidLoad];    
     NSLog(@"\r\r\rDid We Get Student context %@\r\r\r", context);
@@ -64,6 +77,29 @@
     }
     return messagesString;
 }
+=======
+    [super viewDidLoad];
+    [self fetchMessageToAll];
+    NSLog(@"\r\r\rDid We Get Student context %@\r\r\r", context);
+    [Storage readData];
+    [self alertViewStart];
+    //[self ActivityStart];
+}
+
+#pragma mark - Message Methods
+
+-(void)fetchMessageToAll
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    for (SendMessage *message in delegate.messages) {
+        if ([message.studentId isEqualToString:@"messageToAll"] || [message.studentId isEqualToString:currentStudent.firstName]) {
+            [messages addObject:message];
+        }
+    }
+}
+
+
+>>>>>>> patrikupload
 #pragma mark AlertView settings
 -(void)alertViewStart
 {
@@ -104,6 +140,7 @@
                 currentStudent = student;
                 NSLog(@"\r\r\r\r\r\r currentStudent: %@ \r\rstudent:%@\r\r\r\r",currentStudent, student);
                 break;
+<<<<<<< HEAD
             }else{
                 UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Please try again, wrong ID"
                                                                message:@""
@@ -115,6 +152,8 @@
                 [[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
                 [alert show];
                 
+=======
+>>>>>>> patrikupload
             }
         }
     }
@@ -126,7 +165,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [values count];
+    return [messages count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -134,10 +173,10 @@
     
     if(!cell)
     {
-        NSLog(@"Creating new cell");
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
 
+<<<<<<< HEAD
     NSMutableArray *cellArray = [NSMutableArray new];
     if (indexPath == 0 ) {
         if (currentStudent.courses) {
@@ -169,16 +208,22 @@
     
     /////// göra en custom cell med två label, en som visar första tiden på dagen och en som visar sista.
     // i cellen finns resterande schema.
+=======
+>>>>>>> patrikupload
     
+        cell.textLabel.text = [[messages objectAtIndex:[indexPath row]] message];
     
+    return cell;
+
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DayDetailViewController *ddvc = [DayDetailViewController new];
-    ddvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:ddvc animated:YES completion:nil];
+    
     
 }
+
+
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -189,11 +234,19 @@
 }
 
 -(void)ActivityStart
+<<<<<<< HEAD
 {
     [LoadingMessegesToAll startAnimating];
 }
 -(void)ActivityStop
 {
+=======
+{
+    [LoadingMessegesToAll startAnimating];
+}
+-(void)ActivityStop
+{
+>>>>>>> patrikupload
     [LoadingMessegesToAll stopAnimating];
 }
 

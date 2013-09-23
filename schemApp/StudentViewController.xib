@@ -7,9 +7,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentViewController">
             <connections>
                 <outlet property="LoadingMessegesToAll" destination="44d-LS-TeM" id="oI6-Qb-yv6"/>
+<<<<<<< HEAD
                 <outlet property="MessageToAll" destination="Fuy-6y-wdJ" id="t16-hG-jyf"/>
+=======
+>>>>>>> patrikupload
                 <outlet property="TodaysLections" destination="VjH-Px-nEd" id="bxH-tN-QKJ"/>
                 <outlet property="WelcomeStudentLabel" destination="04S-gk-15H" id="Ze4-N3-Ep7"/>
+                <outlet property="messageTableView" destination="zkA-6T-TAc" id="Rq3-xH-KAc"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -30,7 +34,7 @@
                     </items>
                 </toolbar>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays Course´s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjH-Px-nEd">
-                    <rect key="frame" x="20" y="307" width="280" height="84"/>
+                    <rect key="frame" x="20" y="210" width="280" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
@@ -47,12 +51,15 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+<<<<<<< HEAD
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message for all" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuy-6y-wdJ">
                     <rect key="frame" x="20" y="448" width="274" height="58"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+=======
+>>>>>>> patrikupload
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04S-gk-15H">
                     <rect key="frame" x="62" y="11" width="196" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,6 +81,18 @@
                         <action selector="showSchem:" destination="-1" eventType="touchUpInside" id="NcV-nG-XNi"/>
                     </connections>
                 </button>
+<<<<<<< HEAD
+=======
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zkA-6T-TAc">
+                    <rect key="frame" x="20" y="319" width="280" height="203"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="afp-QF-Yyw"/>
+                        <outlet property="delegate" destination="-1" id="abt-Ky-Dbw"/>
+                    </connections>
+                </tableView>
+>>>>>>> patrikupload
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

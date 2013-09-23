@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CAA05255-30AA-4741-9DBE-250E8F046A2E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>schemApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A15AFC7-BC46-4FA1-8586-CB5FC4744882</key>
+		<string>ssh://github.com/josinkko/schemaApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>schemApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A15AFC7-BC46-4FA1-8586-CB5FC4744882</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/josinkko/schemaApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A15AFC7-BC46-4FA1-8586-CB5FC4744882</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A15AFC7-BC46-4FA1-8586-CB5FC4744882</string>
+			<key>IDESourceControlWCCName</key>
+			<string>v1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

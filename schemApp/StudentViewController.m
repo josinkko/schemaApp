@@ -9,24 +9,56 @@
 #import "StudentViewController.h"
 #import "DayDetailViewController.h"
 #import "PrivateMessageViewController.h"
+#import "Course.h"
 #import "Student.h"
+#import "Lesson.h"
 #import "Storage.h"
+#import "SendMessage.h"
+#import "AppDelegate.h"
 
 @interface StudentViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 @end
 @implementation StudentViewController
 {
-    NSArray *values;
-    
+    NSMutableArray *messages;
+    NSManagedObjectContext *context;
 }
-@synthesize MessageToAll,WelcomeStudentLabel;
+@synthesize WelcomeStudentLabel,LoadingMessegesToAll,messageTableView, currentStudent;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        context = [Storage sharedStorage].context;
+        messages = [NSMutableArray new];
+        NSLog(@"\r\r\rLoading Student context %@\r\r\r", context);
+    }
+    return self;
+}
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
+    [self fetchMessageToAll];
+    NSLog(@"\r\r\rDid We Get Student context %@\r\r\r", context);
+    [Storage readData];
     [self alertViewStart];
-    
+    //[self ActivityStart];
 }
+
+#pragma mark - Message Methods
+
+-(void)fetchMessageToAll
+{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    for (SendMessage *message in delegate.messages) {
+        if ([message.studentId isEqualToString:@"messageToAll"] || [message.studentId isEqualToString:currentStudent.firstName]) {
+            [messages addObject:message];
+        }
+    }
+}
+
+
 #pragma mark AlertView settings
 -(void)alertViewStart
 {
@@ -55,37 +87,30 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     
-    if(buttonIndex ==0)
+    if(buttonIndex == 0)
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
-        NSManagedObjectContext *readContext = [Storage sharedStorage].context;
         NSFetchRequest *studentRequest = [NSFetchRequest fetchRequestWithEntityName:@"Student"];
-        NSArray * studentResult = [readContext executeFetchRequest:studentRequest error:nil];
+        NSArray * studentResult = [context executeFetchRequest:studentRequest error:nil];
         for (Student *student in studentResult) {
             if ([student.studentSignum isEqualToString:[[alertView textFieldAtIndex:0] text]]) {
                 WelcomeStudentLabel.text = [NSString stringWithFormat:@"Welcome %@ %@", student.firstName, student.lastName];
+                currentStudent = student;
+                NSLog(@"\r\r\r\r\r\r currentStudent: %@ \r\rstudent:%@\r\r\r\r",currentStudent, student);
+                break;
             }
         }
-        
     }
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self)
-    {
-        values = @[@"Måndag",@"Tisdag",@"Onsdag",@"Torsdag",@"Fredag"];
-    }
-    return self;
-}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [values count];
+    return [messages count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -93,26 +118,23 @@
     
     if(!cell)
     {
-        NSLog(@"Creating new cell");
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
-    cell.textLabel.text = values[indexPath.row];
+
+    
+        cell.textLabel.text = [[messages objectAtIndex:[indexPath row]] message];
     
     return cell;
-    
-    
-    /////// göra en custom cell med två label, en som visar första tiden på dagen och en som visar sista.
-    // i cellen finns resterande schema.
-    
-    
+
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DayDetailViewController *ddvc = [DayDetailViewController new];
-    ddvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:ddvc animated:YES completion:nil];
+    
     
 }
+
+
 - (IBAction)Back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -121,7 +143,23 @@
     pmvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:pmvc animated:YES completion:nil];
 }
--(void)getStudentAlert
+
+-(void)ActivityStart
 {
+    [LoadingMessegesToAll startAnimating];
+}
+-(void)ActivityStop
+{
+    [LoadingMessegesToAll stopAnimating];
+}
+
+- (IBAction)showSchem:(id)sender {
+    
+    DayDetailViewController*ddvc = [DayDetailViewController new];
+    ddvc.currentStudent = currentStudent;
+    NSLog(@"super: %@",currentStudent);
+    ddvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:ddvc animated:YES completion:nil];
+    
 }
 @end

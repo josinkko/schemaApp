@@ -12,13 +12,13 @@
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *from;
 @property (nonatomic, copy) NSString *studentId;
+@property (nonatomic, copy) NSString *time;
 
 
--(id) initWithMessage:(NSString*) message From:(NSString*)from StudentId:(NSString*)studentId;
+-(id) initWithMessage:(NSString*) message From:(NSString*)from StudentId:(NSString*)studentId Time:(NSString*)time;
 +(id) messageFromJson:(NSDictionary*) messageAsJson;
 
 
 -(NSString*)json;
 -(NSDictionary*)dictionary;
-
 @end

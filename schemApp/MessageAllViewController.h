@@ -17,5 +17,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *MessageText;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *SendActivIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *MessageSent;
+@property (weak, nonatomic) IBOutlet UITextField *MessageTime;
+
+-(void)activityStart;
+-(void)activityStop;
 @end

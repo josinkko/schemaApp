@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Student;
 @interface StudentViewController : UIViewController
 - (IBAction)Back:(id)sender;
 - (IBAction)ReadMessage:(id)sender;
+- (IBAction)showSchem:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *WelcomeStudentLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *TodaysLections;
-
-@property (weak, nonatomic) IBOutlet UILabel *MessageToAll;
-@property (weak, nonatomic) IBOutlet UITableView *SchemTabelView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *LoadingMessegesToAll;
+@property (weak, nonatomic) IBOutlet UITableView *messageTableView;
+@property (strong, nonatomic) Student *currentStudent;
 @end

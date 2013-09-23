@@ -13,7 +13,7 @@
 
 @end
 @implementation MessageAllViewController
-@synthesize MessageText,FromTextField,MessageSent;
+@synthesize MessageText,FromTextField,MessageSent,SendActivIndicator,MessageTime;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +26,9 @@
 {
     [self timeStamp];
     [super viewDidLoad];
+    [self activityStop];
+    self.MessageTime.hidden = YES;
+
     MessageText.layer.borderColor = [UIColor lightGrayColor].CGColor;
     MessageText.layer.borderWidth = 0.5f;
 }
@@ -40,20 +43,34 @@
 }
 #pragma mark MessageToAll
 - (IBAction)SendMessage:(id)sender {
+    [self activityStart];
     NSLog(@"***************  SEND MESSEGE  ***************");
     Couch *couch =[[Couch alloc] init];
     SendMessage *message = [[SendMessage alloc]initWithMessage:self.MessageText.text
-                                                        From:self.FromTextField.text StudentId:@"messageToAll"];{
+                                                        From:self.FromTextField.text StudentId:@"messageToAll"
+                                                            Time:self.MessageTime.text];{
         [couch reqToUrl:@"https://schempp.iriscouch.com/messages"
         HttpMethod:@"POST" body:[message json] onComplete:^(NSURLResponse *response,
                                                             NSData *data,
                                                             NSError *error) {
-    NSLog(@"%@", [Couch parseData:data]);
-    NSLog(@"***************  SUCCESS  ***************");
-        
-        }];
-    MessageSent.text = @"Message sent";
+            
+        if(!error)
+            {
+                NSLog(@"%@", [Couch parseData:data]);
+                [self activityStop];
 
+                MessageSent.text = @"Message sent";
+                NSLog(@"***************  SUCCESS  ***************");
+            }
+        else
+            {
+                [self activityStop];
+                MessageSent.text = @"No connection, please try again";
+                NSLog(@"error");
+            }
+        }];
+        
+  
     }
 }
 
@@ -82,8 +99,20 @@
     [dateFormatter setDateFormat:@"EEE, HH:mm \n\n"];
     NSString *dateInStringFormated = [dateFormatter stringFromDate:currentDateTime];
     NSLog(@"%@", dateInStringFormated);
-    MessageText.text = dateInStringFormated;
+    MessageTime.text = dateInStringFormated;
+    
 }
 
+
+-(void)activityStart
+{
+    [SendActivIndicator startAnimating];
+
+
+}
+-(void)activityStop
+{
+    [SendActivIndicator stopAnimating];
+}
 
 @end

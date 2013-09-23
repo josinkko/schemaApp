@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3394" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Course" representedClassName="Course" syncable="YES">
-        <attribute name="courseDay" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courseDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courseId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courseReadingMaterial" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="courseStart" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="courseStop" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="course" inverseEntity="Lesson" syncable="YES"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="courses" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Lesson" representedClassName="Lesson" syncable="YES">
+        <attribute name="fridayStart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fridayStop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mondayStart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mondayStop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thursdayStart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thursdayStop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tuesdayStart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tuesdayStop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wednesdayStart" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wednesdayStop" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="lesson" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentSignum" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="student" inverseEntity="Course" syncable="YES"/>
     </entity>
     <elements>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Student" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Lesson" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

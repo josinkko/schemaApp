@@ -16,6 +16,7 @@
     message.message = messageAsJson[@"Message"];
     message.from = messageAsJson[@"From"];
     message.message = messageAsJson[@"StudentId"];
+    message.time = messageAsJson[@"Time"];
     
     
     return message;
@@ -23,10 +24,10 @@
 
 -(id) init
 {
-    return [self initWithMessage:@"" From:@"" StudentId:@""];
+    return [self initWithMessage:@"" From:@"" StudentId:@"" Time:@""];
 }
 
--(id) initWithMessage:(NSString*) message From:(NSString*) from StudentId:(NSString*)studentId
+-(id) initWithMessage:(NSString*) message From:(NSString*) from StudentId:(NSString*)studentId Time:(NSString *)time
 {
     self = [super init];
     
@@ -34,6 +35,7 @@
         self.message = message;
         self.from = from;
         self.studentId =studentId;
+        self.time = time;
         
     }
     return self;
@@ -41,7 +43,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%@, %@, %@", self.message, self.from, self.studentId];
+    return [NSString stringWithFormat:@"%@, %@, %@, %@", self.message, self.from, self.studentId, self.time];
 }
 
 
@@ -55,6 +57,7 @@
     dict[@"Message"] = self.message;
     dict[@"From"] = self.from;
     dict[@"StudentId"] = self.studentId;
+    dict[@"Time"] = self.time;
     
     return dict;
 }
@@ -62,9 +65,4 @@
 {
     return [Couch jsonValue:[self dictionary]];
 }
-
-
-
-
-
 @end

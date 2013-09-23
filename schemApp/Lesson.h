@@ -2,31 +2,27 @@
 //  Lesson.h
 //  schemApp
 //
-//  Created by sebastian holmqvist on 2013-09-11.
+//  Created by Patrik Sundbäck on 9/19/13.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
 @class Course;
 
-@interface Lesson : NSObject
+@interface Lesson : NSManagedObject
 
-@property (nonatomic, copy) NSString* lessonId;
-@property (nonatomic, copy) NSDate* lessonTimeStart;
-@property (nonatomic, copy) NSDate* lessonTimeEnd;
-@property (nonatomic, copy) Course* course;
-@property (nonatomic, copy) NSString* teacher;
-@property (nonatomic, copy) NSMutableSet* students;
-@property (nonatomic, copy) NSString* classRoom;
-@property (nonatomic, copy) NSString* readingInstructions;
-
-
--(id) initWithLessonTimeStart: (NSDate*) targetLessonTimeStart lessonTimeEnd: (NSDate*) targetLessonTimeEnd course: (Course*) targetCourse teacher: (NSString*) targetTeacher students: (NSMutableSet*)targetStudents classRoom: (NSString*) targetClassRoom readingInstructions: (NSString*) targetReadingInstructions;
-
--(NSString*) returnDateAsString: (NSDate*) targetDate;
--(NSDate*) returnDateFromString: (NSString*) targetString;
-
--(NSDictionary*)returnLessonAsNSDictionary;
-+(id)returnLessonFromDictionary: (NSDictionary*)targetLessonAsNSDictionary;
+@property (nonatomic, retain) NSString * mondayStart;
+@property (nonatomic, retain) NSString * mondayStop;
+@property (nonatomic, retain) NSString * tuesdayStart;
+@property (nonatomic, retain) NSString * tuesdayStop;
+@property (nonatomic, retain) NSString * wednesdayStart;
+@property (nonatomic, retain) NSString * wednesdayStop;
+@property (nonatomic, retain) NSString * thursdayStart;
+@property (nonatomic, retain) NSString * thursdayStop;
+@property (nonatomic, retain) NSString * fridayStart;
+@property (nonatomic, retain) NSString * fridayStop;
+@property (nonatomic, retain) Course *course;
 
 @end

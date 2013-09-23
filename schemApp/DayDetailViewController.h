@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Student;
 @interface DayDetailViewController : UIViewController
 - (IBAction)Back:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITableView *TimeTabelView;
+@property (weak, nonatomic) Student *currentStudent;
 @end

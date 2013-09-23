@@ -2,34 +2,29 @@
 //  Student.h
 //  schemApp
 //
-//  Created by sebastian holmqvist on 2013-09-11.
+//  Created by Patrik Sundbäck on 9/17/13.
 //  Copyright (c) 2013 sebastian holmqvist. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import <CoreData/CoreData.h>
 
-@interface Student : NSObject <User>
-@property (nonatomic, copy) NSString* studentSignum;
-@property (nonatomic, copy) NSString* firstName;
-@property (nonatomic, copy) NSString* lastName;
-@property (nonatomic, copy) NSMutableArray *unreadMessages;
-@property (nonatomic, copy) NSMutableArray *readMessages;
+@class Course;
 
-#pragma mark - Init Students
--(id) initWithFirstName: (NSString*) targetFirstName lastName: (NSString*) targetLastName studentSignum: (NSString*)targetSignum;
+@interface Student : NSManagedObject
 
-#pragma mark - Show Lessons methods
+@property (nonatomic, retain) NSString * studentSignum;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSNumber * isActive;
+@property (nonatomic, retain) NSSet *courses;
+@end
 
--(void) showLessonsForDate: (NSString*) yyyyMMdd;
--(void) showLessonsForWeek: (NSString*) targetWeek;
+@interface Student (CoreDataGeneratedAccessors)
 
-#pragma mark - Message methods
--(void) sendMessage: (NSString*) targetMessage ToSpecificUser: (id<User>) targetUser;
--(void) readUnreadMessages;
-
-#pragma mark - Return methods
--(NSDictionary*)returnStudentAsNSDictionary;
-+(id)returnStudentFromDictionary: (NSDictionary*)targetStudentAsNSDictionary;
+- (void)addCoursesObject:(Course *)value;
+- (void)removeCoursesObject:(Course *)value;
+- (void)addCourses:(NSSet *)values;
+- (void)removeCourses:(NSSet *)values;
 
 @end

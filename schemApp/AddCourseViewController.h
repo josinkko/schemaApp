@@ -15,6 +15,7 @@
 - (IBAction)ClearCourseInfo:(id)sender;
 - (IBAction)CleareReadingInfo:(id)sender;
 - (IBAction)SaveCourse:(id)sender;
+- (IBAction)AddTime:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *CourseName;
 @property (weak, nonatomic) IBOutlet UITextView *CourseInformation;

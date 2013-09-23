@@ -31,9 +31,7 @@
 {
     self = [super init];
     if(self) {
-        queue =[[NSOperationQueue alloc] init];
-        
-        
+        queue =[[NSOperationQueue alloc] init];     
     }
     return self;
 }
@@ -65,6 +63,7 @@
     return request;
     
 }
+
 
 
 
